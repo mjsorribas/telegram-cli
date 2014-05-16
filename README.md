@@ -7,6 +7,8 @@ Operating System: Virtualbox Ubuntu 64bit
 ```
 
 **Application Architecture** <br>
+Application - User
+
 Account management
 ```
 URL                   Screen/State/Description
@@ -18,7 +20,7 @@ URL                   Screen/State/Description
 ```
 Home page for logged in users
 ```
-/                     Posts page(Show all posts & User also can publish)
+/posts                Posts page(Show all posts & User also can publish)
 ```
 Profile page
 ```
@@ -29,7 +31,7 @@ Profile page
 
 **Data Models** <br>
 1. User - (name, username, password) <br>
-2. Post - (body) <br>
+2. Post - (body, username) <br>
 
 **Features:**<br>
 Account management <br>
