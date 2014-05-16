@@ -9,7 +9,7 @@ var User = DS.Model.extend({
 });
 
 User.reopenClass({
-  FIXTURES = [{
+  FIXTURES: [{
     id: 1,
     name: 'Will Smith',
     username: 'will',

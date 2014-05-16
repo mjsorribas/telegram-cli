@@ -5,10 +5,10 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('register', {path: '/'});
   this.route('login');
-  this.route('reset_password');
-  this.route('reset_success');
+  this.route('resetpassword');
+  this.route('resetsuccess');
 
-  this.route('posts', {path: '/'})
+  this.route('posts');
   this.resource('username', function(){
     this.route('following');
     this.route('followers');

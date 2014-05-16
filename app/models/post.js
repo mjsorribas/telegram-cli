@@ -6,7 +6,7 @@ var Post = DS.Model.extend({
 });
 
 Post.reopenClass({
-  FIXTURES = [{
+  FIXTURES:[{
     id: 1,
     body: 'Hello world! This is the fist post!'
     // ,username: 'alice'

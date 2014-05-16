@@ -15,8 +15,8 @@ URL                   Screen/State/Description
 
 /                     SignUp Page(Name, Username, Email, Password)
 /login                Login Page(Username, Password)
-/reset_password       Reset Password Page(Enter Email)
-/reset_success        Notification page after rest password reset
+/resetpassword        Reset Password Page(Enter Email)
+/resetsuccess         Notification page after rest password reset
 ```
 Home page for logged in users
 ```
