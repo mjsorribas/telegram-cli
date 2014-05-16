@@ -39,10 +39,12 @@ Account management <br>
 - User can request forgot-password using email
 - User can recover password sent from on requesting forgot-password
 <br>
+
 Home page for logged in users<br>
 - User can publish posts (Limit: 140 characters per post)
 - User can delete own posts
 <br>
+
 Profile page <br>
 - User can view latest posts from an user
 - User can view the followers of an user
