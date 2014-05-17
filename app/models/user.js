@@ -1,11 +1,11 @@
-// var hasMany = DS.hasMany;
+var hasMany = DS.hasMany;
 
 var User = DS.Model.extend({
   name: DS.attr('string'),
   username: DS.attr('string'),
   email: DS.attr('string'),
   password: DS.attr('string')
-  // ,posts: DS.hasMany('post')
+  ,posts: DS.hasMany('post')
 });
 
 User.reopenClass({
