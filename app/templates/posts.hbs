@@ -23,7 +23,7 @@
     <div class="publishPost">
       <form action="POST">
         {{textarea class="postInput" maxlength="140" placeholder="Write and publish ..." value=postBody}}
-        <button class="publish-button" type="submit">Publish</button>
+        <button class="publish-button" type="submit" {{action "publishPost"}}>Publish</button>
         <span>140 characters</span>
       </form>
     </div>  
@@ -44,28 +44,5 @@
         </div>
       </div>
     {{/each}}
-{{!--     <div class="eachPost">
-      <div class="postProfilePhoto">
-        <img src="" alt="Profile Photo">
-      </div>
-      <div class="eachPostContent">
-        <p class="postAuthor">Author 1</p>
-        <p class="postContent">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini</p>
-        <span class="timePosted">2 minutes ago</span>
-        <a class="deletePost" href="">Delete</a>
-      </div>
-    </div>
-    <div class="eachPost">
-      <div class="postProfilePhoto">
-        <img src="" alt="Profile Photo">
-      </div>
-      <div class="eachPostContent">
-        <p class="postAuthor">Author 2</p>
-        <p class="postContent">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini</p>
-        <span class="timePosted">5 minutes ago</span>
-        <a class="deletePost" href="">Delete</a>
-      </div>
-    </div> --}}
-
   </div>
 </div><!-- End Main content -->
