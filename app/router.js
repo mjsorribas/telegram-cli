@@ -9,9 +9,11 @@ Router.map(function() {
   this.route('resetsuccess');
 
   this.route('posts');
-  this.resource('/:username', function(){
-    this.route('following');
-    this.route('followers');
+  this.resource('users', function(){
+    this.resource('user',{path: ':username'}, function(){
+      this.route('following');
+      this.route('followers');
+    });
   });
 });
 
