@@ -10,7 +10,7 @@ Router.map(function() {
 
   this.route('posts');
   this.resource('users', function(){
-    this.resource('user',{path: ':username'}, function(){
+    this.resource('user',{path: '/:username'}, function(){
       this.route('following');
       this.route('followers');
     });

@@ -24,9 +24,9 @@
           <input class="username-password" type="password" placeholder="Enter your password ...">
           <button class="login-button" type="submit">Login</button>
           <div class="recover-pass-wrap">
-            <a href="#" class="recover-pass" >Recover password</a>
+            {{#link-to 'resetpassword' class="recover-pass"}}Reset password{{/link-to}}
             <span class="or">or</span>
-            <a href="#" class="recover-pass">Register</a>
+            {{#link-to 'register' class="recover-pass"}}Register{{/link-to}}
           </div>
         </form>
       </div>

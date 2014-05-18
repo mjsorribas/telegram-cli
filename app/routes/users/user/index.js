@@ -1,4 +1,4 @@
-var UsersIndexRoute = Ember.Route.extend({
+var UsersUserIndexRoute = Ember.Route.extend({
   model: function(params) {
     // the server returns `{ slug: 'foo-user' }`
     return this.store.find("user", params.username);
@@ -9,4 +9,4 @@ var UsersIndexRoute = Ember.Route.extend({
     return { username: model.get('username') };
   }
 });
-export default UsersIndexRoute;
+export default UsersUserIndexRoute;
