@@ -21,9 +21,7 @@ var RegisterController = Ember.ArrayController.extend({
       });
 
       // Save this user model
-      user.save(function(){
-        alert('saved');
-      });
+      user.save();
     }
   }
 
