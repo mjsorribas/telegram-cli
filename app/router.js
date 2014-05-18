@@ -10,7 +10,9 @@ Router.map(function() {
 
   this.route('posts');
   this.resource('users', function(){
-    this.resource('user',{path: '/:username'}, function(){
+    // this.route('index',{path: '/'}) - UsersIndexRoute
+    this.resource('user',{path: ':user_id'}, function(){
+      // this.route('index',{path: '/'}) - UserIndexRoute
       this.route('following');
       this.route('followers');
     });
