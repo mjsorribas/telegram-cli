@@ -19,12 +19,12 @@
 
       <div class="login-form">
         <p class="get-going">Create your account</p>
-        <form action="">
-          <input class="username-password" type="text" placeholder="Enter your email ...">
-          <input class="username-password" type="text" placeholder="Enter your name ...">
-          <input class="username-password" type="text" placeholder="Enter your username ...">
-          <input class="username-password" type="password" placeholder="Enter your password ...">
-          <button class="login-button" type="submit">Register</button>
+        <form>
+          {{input value=email class="username-password" type="text" placeholder="Enter your email ..."}}
+          {{input value=name class="username-password" type="text" placeholder="Enter your name ..."}}
+          {{input value=username class="username-password" type="text" placeholder="Enter your username ..."}}
+          {{input value=password class="username-password" type="password" placeholder="Enter your password ..."}}
+          <button class="login-button" type="submit" {{action "register"}}>Register</button>
           <div class="recover-pass-wrap">
             {{#link-to 'login' class="recover-pass"}}Login{{/link-to}}
           </div>
