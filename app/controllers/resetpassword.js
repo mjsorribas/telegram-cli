@@ -1,4 +1,5 @@
-var ResetpasswordController = Ember.ArrayController.extend({
+var ResetpasswordController = Ember.ObjectController.extend({
+  content: {},
   actions: {
     sendpass: function(){
 

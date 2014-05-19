@@ -1,4 +1,5 @@
-var LoginController = Ember.ArrayController.extend({
+var LoginController = Ember.ObjectController.extend({
+  content: {},
   actions: {
     login: function(){
       // Get the input values from Login form
@@ -10,18 +11,24 @@ var LoginController = Ember.ArrayController.extend({
       // });
 
       // Find the model that matches username & password
-      var user = this.store.find('user', 
-        { username: user_info.username ,
-          password: user_info.password 
-        }
-      );
+      if(user_info.username !== undefined && 
+         user_info.password !== undefined){
+        // var user = this.store.find('user', 
+        //   { username: user_info.username ,
+        //     password: user_info.password 
+        //   }
+        // );
 
-      if(user_info.username === 'a' && user_info.password === 'password'){
-      // if(user_info.username === user.username && user_info.password === user.password){
-        // Transition to posts page
-        this.transitionToRoute('posts');
+        if(user_info.username === 'a' && 
+           user_info.password === 'password'){
+          // if(user_info.username === user.username && user_info.password === user.password){
+          // Transition to posts page
+          this.transitionToRoute('posts');
+        } else {
+          alert('Check your username/password');
+        }
       } else {
-        alert('Failed');
+        alert('Fill out everything');
       }
 
       // Clear input fields

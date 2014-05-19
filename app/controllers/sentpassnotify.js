@@ -1,4 +1,5 @@
-var SentpassnotifyController = Ember.ArrayController.extend({
+var SentpassnotifyController = Ember.ObjectController.extend({
+  content: {}
 
 });
 
