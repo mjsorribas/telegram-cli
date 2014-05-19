@@ -6,7 +6,7 @@ Router.map(function() {
   this.route('register', {path: '/'});
   this.route('login');
   this.route('resetpassword');
-  this.route('resetsuccess');
+  this.route('sentpassnotify');
 
   this.route('posts');
   this.resource('users', function(){
