@@ -5,9 +5,9 @@ var LoginController = Ember.ArrayController.extend({
       var user_info = this.getProperties('username', 'password');
 
       // Send the date to model
-      Ember.$.post('user', user_info).then(function(response){
-        alert('Hi');
-      });
+      // Ember.$.post('user', user_info).then(function(response){
+      //   alert('Hi');
+      // });
 
       // Find the model that matches username & password
       var user = this.store.find('user', 
@@ -16,12 +16,13 @@ var LoginController = Ember.ArrayController.extend({
         }
       );
 
-      // if(user_info.username == 'a' && user_info.password =='password'){
+      if(user_info.username === 'a' && user_info.password === 'password'){
       // if(user_info.username === user.username && user_info.password === user.password){
-      //   alert('Logged In!');
-      // } else {
-      //   alert('Failed');
-      // }
+        // Transition to posts page
+        this.transitionToRoute('posts');
+      } else {
+        alert('Failed');
+      }
 
       // Clear input fields
       this.setProperties({

@@ -22,6 +22,8 @@ var RegisterController = Ember.ArrayController.extend({
 
       // Save this user model
       user.save();
+
+      this.transitionToRoute('login');
     }
   }
 
