@@ -1,4 +1,4 @@
-var ResetpasswordController = Ember.ObjectController.extend({
+var AuthResetpasswordController = Ember.ObjectController.extend({
   content: {},
   actions: {
     sendpass: function(){
@@ -7,10 +7,10 @@ var ResetpasswordController = Ember.ObjectController.extend({
 
 
       // Make the transition to reset success page
-      this.transitionToRoute('sentpassnotify');
+      this.transitionToRoute('auth.sentpassnotify');
     }
   }
 
 });
 
-export default ResetpasswordController;
+export default AuthResetpasswordController;

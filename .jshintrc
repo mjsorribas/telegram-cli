@@ -16,7 +16,7 @@
   "boss" : true,
   "curly": false,
   "debug": false,
-  "devel": false,
+  "devel": true,
   "eqeqeq": true,
   "evil": true,
   "forin": false,

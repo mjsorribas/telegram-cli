@@ -3,10 +3,17 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('register', {path: '/'});
-  this.route('login');
-  this.route('resetpassword');
-  this.route('sentpassnotify');
+  // this.route('register', {path: '/'});
+  // this.route('login');
+  // this.route('resetpassword');
+  // this.route('sentpassnotify');
+
+  this.resource('auth', {path: '/'}, function(){
+    this.route('register');
+    this.route('login');
+    this.route('resetpassword');
+    this.route('sentpassnotify');
+  });
 
   this.route('posts');
   this.resource('users', function(){

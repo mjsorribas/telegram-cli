@@ -1,5 +1,5 @@
-var RegisterController = Ember.ObjectController.extend({
-  content: {},
+var AuthRegisterController = Ember.ObjectController.extend({
+  // content: {},
   actions: {
     register: function(){
       // Get the input values from Register form
@@ -21,7 +21,7 @@ var RegisterController = Ember.ObjectController.extend({
         // Save this user model
         user.save();
 
-        this.transitionToRoute('login');
+        this.transitionToRoute('auth.login');
       } else {
         alert('Fill out eveything');
       }
@@ -39,4 +39,4 @@ var RegisterController = Ember.ObjectController.extend({
 
 });
 
-export default RegisterController;
+export default AuthRegisterController;

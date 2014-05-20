@@ -1,4 +1,4 @@
-var LoginController = Ember.ObjectController.extend({
+var AuthLoginController = Ember.ObjectController.extend({
   content: {},
   actions: {
     login: function(){
@@ -41,4 +41,4 @@ var LoginController = Ember.ObjectController.extend({
 
 });
 
-export default LoginController;
+export default AuthLoginController;
