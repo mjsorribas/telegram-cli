@@ -1,6 +1,2 @@
-var UsersRoute = Ember.Route.extend({
-  model: function(){
-    return this.store.find('user');
-  }
-});
+var UsersRoute = Ember.Route.extend({});
 export default UsersRoute;

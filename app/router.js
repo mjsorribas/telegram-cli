@@ -3,11 +3,6 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  // this.route('register', {path: '/'});
-  // this.route('login');
-  // this.route('resetpassword');
-  // this.route('sentpassnotify');
-
   this.resource('auth', {path: '/'}, function(){
     this.route('register');
     this.route('login');
@@ -18,7 +13,7 @@ Router.map(function() {
   this.route('posts');
   this.resource('users', function(){
     // this.route('index',{path: '/'}) - UsersIndexRoute
-    this.resource('user',{path: ':user_id'}, function(){
+    this.resource('user',{path:':user_id'}, function(){
       // this.route('index',{path: '/'}) - UserIndexRoute
       this.route('following');
       this.route('followers');
