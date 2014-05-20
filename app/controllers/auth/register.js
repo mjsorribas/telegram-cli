@@ -1,27 +1,36 @@
 var AuthRegisterController = Ember.ObjectController.extend({
-  // content: {},
+  content: {},
   actions: {
     register: function(){
       // Get the input values from Register form
-      var user_info = this.getProperties('name', 'username', 'email', 'password');
+      var userInfo = this.getProperties('name', 'username', 'email', 'password');
 
       // Create a new user model
       // If the input has empty, give error message
-      if(user_info.name     !== undefined &&  
-         user_info.username !== undefined &&  
-         user_info.email    !== undefined &&  
-         user_info.password !== undefined){
+      if(userInfo.name     !== undefined &&  
+         userInfo.username !== undefined &&  
+         userInfo.email    !== undefined &&  
+         userInfo.password !== undefined){
         var user = this.store.createRecord('user', {
-          name:     user_info.name,
-          username: user_info.username,
-          email:    user_info.email,
-          password: user_info.password
+          name:     userInfo.name,
+          username: userInfo.username,
+          email:    userInfo.email,
+          password: userInfo.password
         });
 
-        // Save this user model
-        user.save();
+        // Save this user model & redirect to posts page if it went success
+        var self = this;
 
-        this.transitionToRoute('auth.login');
+        var onSuccess = function(){
+          self.transitionToRoute('posts');
+        };
+        
+        var onFail = function(){
+          alert('Something went wrong try again');
+        };
+
+        user.save().then(onSuccess, onFail);
+
       } else {
         alert('Fill out eveything');
       }
