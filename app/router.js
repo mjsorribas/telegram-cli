@@ -4,7 +4,7 @@ var Router = Ember.Router.extend({
 
 Router.map(function() {
   this.resource('auth', {path: '/'}, function(){
-    this.route('register');
+    this.route('register', {path: '/'});
     this.route('login');
     this.route('resetpassword');
     this.route('sentpassnotify');

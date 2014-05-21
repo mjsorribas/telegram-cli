@@ -1,19 +1,24 @@
 var AuthRegisterController = Ember.ObjectController.extend({
-  content: {},
+  // content: {},  instead
+  name:     null,
+  id:       null,
+  email:    null,
+  password: null,
+
   actions: {
     register: function(){
       // Get the input values from Register form
-      var userInfo = this.getProperties('name', 'username', 'email', 'password');
+      var userInfo = this.getProperties('name', 'id', 'email', 'password');
 
       // Create a new user model
       // If the input has empty, give error message
       if(userInfo.name     !== undefined &&  
-         userInfo.username !== undefined &&  
+         userInfo.id !== undefined &&  
          userInfo.email    !== undefined &&  
          userInfo.password !== undefined){
         var user = this.store.createRecord('user', {
           name:     userInfo.name,
-          username: userInfo.username,
+          id:       userInfo.id,
           email:    userInfo.email,
           password: userInfo.password
         });
