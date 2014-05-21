@@ -1,5 +1,4 @@
 var AuthLoginController = Ember.ObjectController.extend({
-  // content: {},  instead
   username: null,
   password: null,
 
@@ -11,9 +10,10 @@ var AuthLoginController = Ember.ObjectController.extend({
       if(userInfo.username !== null && 
          userInfo.password !== null){
 
-        var authenticatedUser = this.store.find('user', 'will');
+        // Check if the user's input (username & password) matches the record
+        var authenticatedUser = this.store.find('user', userInfo.username);
 
-        if(authenticatedUser){
+        if(userInfo.password === authenticatedUser.password){
           this.transitionToRoute('posts');
         } else {
           alert('Check your username/password');
