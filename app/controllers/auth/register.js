@@ -12,10 +12,7 @@ var AuthRegisterController = Ember.ObjectController.extend({
 
       // Create a new user model
       // If the input has empty, give error message
-      if(userInfo.name     !== null &&  
-         userInfo.username !== null &&  
-         userInfo.email    !== null &&  
-         userInfo.password !== null){
+      if(userInfo.name && userInfo.username && userInfo.email && userInfo.password){
         var user = this.store.createRecord('user', {
           id:       userInfo.username,
           name:     userInfo.name,

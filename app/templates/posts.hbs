@@ -1,33 +1,37 @@
 <header class="postsHeader"><!-- Navigation -->
   <nav>
     <ul>
-      <li class="brand">
-        <a href="">Home</a>
-      </li>
+      {{#if isLoggedin}}
+        <li class="brand">
+          <a href="">Home</a>
+        </li>
+      {{/if}}
       <li class="navLogo">
         <img src="" alt="telegram logo">
       </li>
-      <li class="userInfoNav">
-        <a href="">
-          <img src="" alt="profile">
-          <p>Username</p>
-        </a>
-      </li>
+      {{#if isLoggedin}}
+        <li class="userInfoNav">
+          <a href="">
+            <img src="" alt="profile">
+            <p>Username</p>
+          </a>
+        </li>
+      {{/if}}
     </ul>      
   </nav>
 </header><!-- END Navigation -->
 
 <div class="postsContainer"><!-- Main content -->
   <div class="innerPostsContent">
-
-    <div class="publishPost">
-      <form action="POST">
-        {{textarea class="postInput" maxlength="140" placeholder="Write and publish ..." value=postBody}}
-        <button class="publish-button" type="submit" {{action "publishPost"}}>Publish</button>
-        <span>140 characters</span>
-      </form>
-    </div>  
-
+    {{#if isLoggedin}}
+      <div class="publishPost">
+        <form action="POST">
+          {{textarea class="postInput" maxlength="140" placeholder="Write and publish ..." value=postBody}}
+          <button class="publish-button" type="submit" {{action "publishPost"}}>Publish</button>
+          <span>140 characters</span>
+        </form>
+      </div>  
+    {{/if}}
     <div class="latestPostsTitle">
       <h3>Latest Posts</h3>
     </div>

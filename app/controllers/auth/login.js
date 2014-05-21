@@ -7,17 +7,23 @@ var AuthLoginController = Ember.ObjectController.extend({
       // Get the input values from Login form
       var userInfo = this.getProperties('username', 'password');
       // Find the model that matches username & password
-      if(userInfo.username !== null && 
-         userInfo.password !== null){
+      if(userInfo.username && userInfo.password ){
 
+        var that = this;
         // Check if the user's input (username & password) matches the record
-        var authenticatedUser = this.store.find('user', userInfo.username);
+        this.store.find('user', userInfo.username)
+        .then(function(authenticatedUser){
+          if(userInfo.password === authenticatedUser.get('password')){
+            that.transitionToRoute('posts');
+          } else {
+            alert('Something went wrong, try again');
+          }  
+        },
+        function(err){
+          alert('Requested user does not exist in our database, please check and try again');
+        });
 
-        if(userInfo.password === authenticatedUser.password){
-          this.transitionToRoute('posts');
-        } else {
-          alert('Check your username/password');
-        }
+
       } else {
         alert('Fill out everything');
       }
