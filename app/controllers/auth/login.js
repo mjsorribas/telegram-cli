@@ -1,23 +1,19 @@
 var AuthLoginController = Ember.ObjectController.extend({
   // content: {},  instead
-  id: null,
+  username: null,
   password: null,
 
   actions: {
     login: function(){
       // Get the input values from Login form
-      var userInfo = this.getProperties('id', 'password');
-      var authenticatedUser;
-
+      var userInfo = this.getProperties('username', 'password');
       // Find the model that matches username & password
-      if(userInfo.id !== undefined && 
-         userInfo.password !== undefined){
+      if(userInfo.username !== null && 
+         userInfo.password !== null){
 
-        authenticatedUser = this.store.find('user', 'will');
+        var authenticatedUser = this.store.find('user', 'will');
+
         if(authenticatedUser){
-        // if(userInfo.username === 'will' && 
-        //    userInfo.password === 'password'){
-          // Transition to posts page
           this.transitionToRoute('posts');
         } else {
           alert('Check your username/password');
@@ -28,7 +24,7 @@ var AuthLoginController = Ember.ObjectController.extend({
 
       // Clear input fields
       this.setProperties({
-        'id': '',
+        'username': '',
         'password': ''
       });
     }
