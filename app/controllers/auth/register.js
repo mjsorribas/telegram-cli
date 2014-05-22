@@ -13,7 +13,7 @@ var AuthRegisterController = Ember.ObjectController.extend({
       // Create a new user model
       // If the input has empty, give error message
       if(userInfo.name && userInfo.username && userInfo.email && userInfo.password){
-        var user = this.store.createRecord('user', {
+        var newUser = this.store.createRecord('user', {
           id:       userInfo.username,
           name:     userInfo.name,
           email:    userInfo.email,
@@ -24,6 +24,7 @@ var AuthRegisterController = Ember.ObjectController.extend({
         var self = this;
 
         var onSuccess = function(){
+          self.set('session.user', newUser);
           self.transitionToRoute('posts');
         };
         
@@ -31,7 +32,7 @@ var AuthRegisterController = Ember.ObjectController.extend({
           alert('Something went wrong try again');
         };
 
-        user.save().then(onSuccess, onFail);
+        newUser.save().then(onSuccess, onFail);
 
       } else {
         alert('Fill out eveything');

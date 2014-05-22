@@ -1,7 +1,7 @@
 <header class="postsHeader"><!-- Navigation -->
   <nav>
     <ul>
-      {{#if isLoggedin}}
+      {{#if session.isAuthenticated}}
         <li class="brand">
           <a href="">Home</a>
         </li>
@@ -9,7 +9,7 @@
       <li class="navLogo">
         <img src="" alt="telegram logo">
       </li>
-      {{#if isLoggedin}}
+      {{#if session.isAuthenticated}}
         <li class="userInfoNav">
           <a href="">
             <img src="" alt="profile">
@@ -23,7 +23,7 @@
 
 <div class="postsContainer"><!-- Main content -->
   <div class="innerPostsContent">
-    {{#if isLoggedin}}
+    {{#if session.isAuthenticated}}
       <div class="publishPost">
         <form action="POST">
           {{textarea class="postInput" maxlength="140" placeholder="Write and publish ..." value=postBody}}
