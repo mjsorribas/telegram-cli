@@ -18,7 +18,7 @@ var AuthLoginController = Ember.ObjectController.extend({
           if(userInfo.password === authenticatedUser.get('password')){
             self.set('session.user', authenticatedUser);
             self.transitionToRoute('posts');
-            this.setProperties({
+            self.setProperties({
               'username': '',
               'password': ''
             });
