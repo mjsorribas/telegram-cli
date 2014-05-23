@@ -46,7 +46,9 @@
           <p class="postAuthor"><strong>{{user.id}}</strong></p>
           <p class="postContent">{{body}}</p>
           <span class="timePosted"><em>2 minutes ago</em></span>
+          {{#if isAuthor}}
           <a class="deletePost" {{action "removePost" this}}>Delete</a>
+          {{/if}}
         </div>
       </div>
     {{/each}}

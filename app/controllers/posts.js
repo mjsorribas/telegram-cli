@@ -1,4 +1,12 @@
 var PostsController = Ember.ArrayController.extend({
+  isAuthor: function(){
+    if(this.get('session').user === this.get('post').user){
+      return true;
+    } else {
+      return false;
+    }
+  }.property('session', 'post'),
+
   body: null,
   actions:{
     publishPost: function(){
@@ -15,10 +23,9 @@ var PostsController = Ember.ArrayController.extend({
       } 
     },
     removePost: function(item) {
+
       item.deleteRecord();
       item.save();
-
-      // item.destroyRecord();
     }
   }
 });
