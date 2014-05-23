@@ -1,9 +1,12 @@
 var AuthLoginController = Ember.ObjectController.extend({
   username: null,
   password: null,
+  error: false,
+  errorMessage: null,
 
   actions: {
     login: function(){
+      this.set('errorMessage', null);
       // Get the input values from Login form
       var userInfo = this.getProperties('username', 'password');
       // Find the model that matches username & password
@@ -16,14 +19,17 @@ var AuthLoginController = Ember.ObjectController.extend({
             self.set('session.user', authenticatedUser);
             self.transitionToRoute('posts');
           } else {
-            alert('Something went wrong, try again');
+            self.set('error', true);
+            self.set('errorMessage', 'Check your password and try again');
           }  
         },
         function(){
-          alert('Requested user does not exist in our database, please check and try again');
+          self.set('error', true);
+          self.set('errorMessage', "The user doesn't exist");
         });
       } else {
-        alert('Fill out everything');
+        this.set('error', true);
+        this.set('errorMessage', 'Fill out everything');
       }
 
       // Clear input fields

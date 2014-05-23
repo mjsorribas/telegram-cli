@@ -1,7 +1,7 @@
 <p class="get-going">Get going ...</p>
 <form {{action login on="submit"}}>
-  {{input value=username class="username-password" type="text" placeholder="Enter your username ..."}}
-  {{input value=password class="username-password" type="password" placeholder="Enter your password ..."}}
+  {{input value=username class="username-password" type="text" placeholder="Enter your username ..." required="required" }}
+  {{input value=password class="username-password" type="password" placeholder="Enter your password ..." required="required" }}
   <button class="login-button" type="submit">Login</button>
   <div class="recover-pass-wrap">
     {{#link-to 'auth.resetpassword' class="recover-pass"}}Reset password{{/link-to}}
@@ -9,3 +9,6 @@
     {{#link-to 'auth.register' class="recover-pass"}}Register{{/link-to}}
   </div>
 </form>
+{{#if error}}
+  <span class="alert-msg">Error: {{errorMessage}}</span>
+{{/if}}
