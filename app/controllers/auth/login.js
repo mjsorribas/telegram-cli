@@ -18,6 +18,10 @@ var AuthLoginController = Ember.ObjectController.extend({
           if(userInfo.password === authenticatedUser.get('password')){
             self.set('session.user', authenticatedUser);
             self.transitionToRoute('posts');
+            this.setProperties({
+              'username': '',
+              'password': ''
+            });
           } else {
             self.set('error', true);
             self.set('errorMessage', 'Check your password and try again');
@@ -32,14 +36,9 @@ var AuthLoginController = Ember.ObjectController.extend({
         this.set('errorMessage', 'Fill out everything');
       }
 
-      // Clear input fields
-      this.setProperties({
-        'username': '',
-        'password': ''
-      });
+
     }
   }
-
 });
 
 export default AuthLoginController;

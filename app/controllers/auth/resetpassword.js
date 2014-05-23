@@ -14,6 +14,10 @@ var AuthResetpasswordController = Ember.ObjectController.extend({
         .then(function(registeredUser){
           if(userInfo.email === registeredUser.get('email')){
             self.transitionToRoute('auth.sentpassnotify');
+            this.setProperties({
+              'username': '',
+              'email': ''
+            });
           } else {
             self.set('error', true);
             self.set('errorMessage', 'Check your email and try again');
