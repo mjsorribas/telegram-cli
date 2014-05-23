@@ -46,7 +46,7 @@
           <p class="postAuthor"><strong>{{user.id}}</strong></p>
           <p class="postContent">{{body}}</p>
           <span class="timePosted"><em>2 minutes ago</em></span>
-          <a class="deletePost">Delete</a>
+          <a class="deletePost" {{action "removePost" this}}>Delete</a>
         </div>
       </div>
     {{/each}}

@@ -16,6 +16,7 @@ html, body{
 
 a {
   text-decoration: none;
+  cursor: default;
 }
 
 div.ember-view {

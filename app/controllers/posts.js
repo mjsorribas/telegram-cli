@@ -13,7 +13,12 @@ var PostsController = Ember.ArrayController.extend({
           self.set('postBody', '');
         });
       } 
+    },
+    removePost: function(item) {
+      item.deleteRecord();
+      item.save();
 
+      // item.destroyRecord();
     }
   }
 });
