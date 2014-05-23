@@ -3,7 +3,7 @@
     <ul>
       {{#if session.isAuthenticated}}
         <li class="brand">
-          <a href="">Home</a>
+          {{#link-to 'posts' }}Home{{/link-to}}
         </li>
       {{/if}}
       <li class="navLogo">
@@ -11,10 +11,10 @@
       </li>
       {{#if session.isAuthenticated}}
         <li class="userInfoNav">
-          <a href="">
+          {{#link-to 'users' }}
             <img src="" alt="profile">
-            <p>Username</p>
-          </a>
+            <p>{{session.user.id}}</p>
+          {{/link-to}}
         </li>
       {{/if}}
     </ul>      
@@ -38,13 +38,15 @@
     {{#each}}
       <div class="eachPost">
         <div class="postProfilePhoto">
+          {{#link-to 'users' }}
           <img src="" alt="Profile Photo">
+          {{/link-to}}
         </div>
         <div class="eachPostContent">
-          <p class="postAuthor">{{user.username}}</p>
+          <p class="postAuthor"><strong>{{user.id}}</strong></p>
           <p class="postContent">{{body}}</p>
-          <span class="timePosted">2 minutes ago</span>
-          <a class="deletePost" href="">Delete</a>
+          <span class="timePosted"><em>2 minutes ago</em></span>
+          <a class="deletePost">Delete</a>
         </div>
       </div>
     {{/each}}

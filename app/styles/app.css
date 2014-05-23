@@ -27,6 +27,11 @@ button:focus {
   outline:0;
 }
 
+button:active {
+  border-color: #0000CD;
+  background-color: #DFDFDF;
+}
+
 /* Color 
 ======================================== */
 .home-box {
