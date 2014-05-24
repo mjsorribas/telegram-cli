@@ -1,12 +1,4 @@
 var PostsController = Ember.ArrayController.extend({
-  // isAuthor: function(){
-  //   if(this.get('session').user === this.get('post').user){
-  //     return true;
-  //   } else {
-  //     return false;
-  //   }
-  // }.property('session', 'post'),
-
   body: null,
   actions:{
     publishPost: function(){
@@ -23,11 +15,11 @@ var PostsController = Ember.ArrayController.extend({
       } 
     },
     removePost: function(item) {
-      if(this.get('session').user && item.get('user').id === this.get('session').user.id){
+      if(this.get('session').user && item.get('user') === this.get('session').user){
         item.deleteRecord();
         item.save();
       } else {
-        console.log('Login!')
+        console.log("You are not this post's author");
       }
     }
   }

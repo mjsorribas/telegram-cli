@@ -37,6 +37,7 @@
     </div>
     {{#each}}
       <div class="eachPost">
+        {{#view 'posts'}}
         <div class="postProfilePhoto">
           {{#link-to 'users' }}
           <img src="" alt="Profile Photo">
@@ -45,11 +46,12 @@
         <div class="eachPostContent">
           <p class="postAuthor"><strong>{{user.id}}</strong></p>
           <p class="postContent">{{body}}</p>
-          <span class="timePosted"><em>2 minutes ago</em></span>
-          {{!-- {{#if isAuthor}} --}}
+          <span class="timePosted"><em>somtimes ago</em></span>
+          {{#if view.entered}}
           <a class="deletePost" {{action "removePost" this}}>Delete</a>
-          {{!-- {{/if}} --}}
+          {{/if}}
         </div>
+        {{/view}}
       </div>
     {{/each}}
   </div>
