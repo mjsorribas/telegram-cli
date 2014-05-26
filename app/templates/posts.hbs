@@ -47,7 +47,7 @@
           <p class="postAuthor"><strong>{{user.id}}</strong></p>
           <p class="postContent">{{body}}</p>
           <span class="timePosted"><em>somtimes ago</em></span>
-          {{#if view.entered}}
+          {{#if view.entered}}   
           <a class="deletePost" {{action "removePost" this}}>Delete</a>
           {{/if}}
         </div>

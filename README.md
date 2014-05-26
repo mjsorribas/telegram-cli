@@ -12,7 +12,6 @@ Logged-in user can publish posts. <br>
 
 
 Todo: <br>
-* Only author can delete own post
 * Delete button of a post is only visible to the post's author
 * The publish post has a timestamp
 
