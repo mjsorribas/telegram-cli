@@ -11,13 +11,11 @@ var AuthLoginController = Ember.ObjectController.extend({
       if(!userInfo.username){
         return this.set('error', 'Please enter your username');
       }
-
       if(!userInfo.password){
         return this.set('error', 'Please enter your password');
       }
 
       var self = this;
-
       var onSuccess = function(authenticatedUser){
         if(userInfo.password === authenticatedUser.get('password')){
           self.set('session.user', authenticatedUser);
@@ -30,13 +28,10 @@ var AuthLoginController = Ember.ObjectController.extend({
           self.set('error', 'Please check your password and try again');
         }  
       }
-
       var onFail = function(){
         self.set('error', "The user doesn't exist");
       }
-
       this.store.find('user', userInfo.username).then(onSuccess, onFail);
-
     }
   }
 });
