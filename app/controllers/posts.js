@@ -1,5 +1,4 @@
 var PostsController = Ember.ArrayController.extend({
-  itemController:'post',
   body: null,
   actions:{
     publishPost: function(){
