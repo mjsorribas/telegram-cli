@@ -1,41 +1,41 @@
 var AuthLoginController = Ember.ObjectController.extend({
   username: null,
   password: null,
-  error: false,
-  errorMessage: null,
+  error: null,
 
   actions: {
     login: function(){
-      this.set('errorMessage', null);
-      // Get the input values from Login form
+      this.set('error', null);
       var userInfo = this.getProperties('username', 'password');
-      // Find the model that matches username & password
-      if(userInfo.username && userInfo.password ){
-        var self = this;
-        // Check if the user's input (username & password) matches the record
-        this.store.find('user', userInfo.username)
-        .then(function(authenticatedUser){
-          if(userInfo.password === authenticatedUser.get('password')){
-            self.set('session.user', authenticatedUser);
-            self.transitionToRoute('posts');
-            self.setProperties({
-              'username': '',
-              'password': ''
-            });
-          } else {
-            self.set('error', true);
-            self.set('errorMessage', 'Check your password and try again');
-          }  
-        },
-        function(){
-          self.set('error', true);
-          self.set('errorMessage', "The user doesn't exist");
-        });
-      } else {
-        this.set('error', true);
-        this.set('errorMessage', 'Fill out everything');
+
+      if(!userInfo.username){
+        return this.set('error', 'Please enter your username');
       }
 
+      if(!userInfo.password){
+        return this.set('error', 'Please enter your password');
+      }
+
+      var self = this;
+
+      var onSuccess = function(authenticatedUser){
+        if(userInfo.password === authenticatedUser.get('password')){
+          self.set('session.user', authenticatedUser);
+          self.setProperties({
+            'username': '',
+            'password': ''
+          });
+          self.transitionToRoute('posts');
+        } else {
+          self.set('error', 'Please check your password and try again');
+        }  
+      }
+
+      var onFail = function(){
+        self.set('error', "The user doesn't exist");
+      }
+
+      this.store.find('user', userInfo.username).then(onSuccess, onFail);
 
     }
   }
