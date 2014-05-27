@@ -7,11 +7,11 @@ html, body{
   height: 100%;
 }
 
-.ember-application {
+body.ember-application {
   font-family: 'Open Sans', sans-serif;  
   background-color: #008CB8;
   padding:0;
-  margin-bottom:0;
+  margin:0;
 }
 
 a {
@@ -20,8 +20,13 @@ a {
 }
 
 div.ember-view {
-  margin:-8px; 
+  margin:0; 
   padding:0;
+  width:100%;
+}
+
+#ember376.eachPostContent{
+  width:100%;
 }
 
 button:focus {

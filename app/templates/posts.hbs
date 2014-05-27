@@ -35,7 +35,7 @@
     <div class="latestPostsTitle">
       <h3>Latest Posts</h3>
     </div>
-    {{#each}}
+    {{#each itemController="post"}}
       <div class="eachPost">
         {{#view 'posts'}}
         <div class="postProfilePhoto">
@@ -47,8 +47,10 @@
           <p class="postAuthor"><strong>{{user.id}}</strong></p>
           <p class="postContent">{{body}}</p>
           <span class="timePosted"><em>somtimes ago</em></span>
-          {{#if view.entered}}   
-          <a class="deletePost" {{action "removePost" this}}>Delete</a>
+          {{#if view.entered}}
+          {{#if isAuthor}}   
+            <a class="deletePost" {{action "removePost" this}}>Delete</a>
+          {{/if}}
           {{/if}}
         </div>
         {{/view}}

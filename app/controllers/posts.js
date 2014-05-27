@@ -1,4 +1,5 @@
 var PostsController = Ember.ArrayController.extend({
+  itemController:'post',
   body: null,
   actions:{
     publishPost: function(){
@@ -22,18 +23,6 @@ var PostsController = Ember.ArrayController.extend({
         console.log("You are not this post's author");
       }
     },
-    isAuthor: function(user){
-      if(this.get('session').user !== null && user === this.get('session').user){
-        console.log(this.get('session').user.id);
-        console.log(this.get('session').user);
-      } else {
-        console.log('noo');
-        console.log(user);
-        console.log(this.get('session').user.id);
-        console.log(this.get('session').user);
-      }
-    }
-
   }
 });
 
