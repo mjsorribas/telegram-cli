@@ -1,5 +1,4 @@
 var User = DS.Model.extend({
-  // id is username on registering a user
   name: DS.attr('string'),
   email: DS.attr('string'),
   password: DS.attr('string'),

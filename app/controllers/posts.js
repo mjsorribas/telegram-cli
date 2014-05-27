@@ -7,7 +7,8 @@ var PostsController = Ember.ArrayController.extend({
       if(body){
         var post = this.store.createRecord('post',{
           body: body,
-          user: this.get('session').user
+          user: this.get('session').user,
+          date: new Date()
         });
         post.save().then(function(){
           self.set('postBody', '');

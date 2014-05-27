@@ -1,6 +1,6 @@
 var Posts = Ember.View.extend({
   classNames: ['eachPostContent'],
-  mouseEnter: function(event){
+  mouseEnter: function(){
     this.set('entered', true);
   },
   mouseLeave: function(){

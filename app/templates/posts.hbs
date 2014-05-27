@@ -46,7 +46,7 @@
         <div class="eachPostContent">
           <p class="postAuthor"><strong>{{user.id}}</strong></p>
           <p class="postContent">{{body}}</p>
-          <span class="timePosted"><em>somtimes ago</em></span>
+          <span class="timePosted"><em>{{formatDate 'date'}}</em></span>
           {{#if view.entered}}
             {{#if isAuthor}}   
               <a class="deletePost" {{action "removePost" this}}>Delete</a>

@@ -26,10 +26,10 @@ var AuthResetpasswordController = Ember.ObjectController.extend({
         } else {
           self.set('error', 'Check your email and try again');
         }
-      }
+      };
       var onFail = function(){
         self.set('error', "The user doesn't exist");
-      }
+      };
       this.store.find('user', userInfo.username).then(onSuccess, onFail);
     }
   }
