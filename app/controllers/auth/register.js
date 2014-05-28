@@ -2,7 +2,6 @@ function isValidEmail(email){
   var regex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
   return regex.test(email);
 }
-
 function isValidPassword(password){
   return password.length >= 6;
 }
@@ -31,7 +30,6 @@ var AuthRegisterController = Ember.ObjectController.extend({
       if(!isValidPassword(userInfo.password)){
         return this.set('error', 'Password must be at least 6 characters');
       }
-
         
       var newUser = this.store.createRecord('user', {
         id:       userInfo.username,
@@ -54,29 +52,7 @@ var AuthRegisterController = Ember.ObjectController.extend({
       var onFail = function(){
         self.set('error', 'There was an error internally, please try again');
       };
-
       newUser.save().then(onSuccess, onFail);
-      
-
-      // this.store.find('user', userInfo.username).then(
-      //   function(){
-      //     self.set('error', 'The username is already registered, please pick else.');
-      //   },
-      //   function(){
-      //     self.set('error', 'Username error');
-      //   }
-      // )
-
-      // this.store.find('user', {email: userInfo.email}).then(
-      //   function(){
-      //     self.set('error', 'The email is already registered, please pick else.');
-      //   },
-      //   function(){
-      //     self.set('error', 'Email Error');
-      //   }
-      // )
-
-
     }
   }
 

@@ -1,29 +1,33 @@
 <header class="postsHeader"><!-- Navigation -->
   <nav>
     <ul>
-      <li class="brand">
-        <a href="">Home</a>
-      </li>
+      {{#if session.isAuthenticated}}
+        <li class="brand">
+          {{#link-to 'posts' }}Home{{/link-to}}
+        </li>
+      {{/if}}
       <li class="navLogo">
         <img src="" alt="telegram logo">
       </li>
-      <li class="userInfoNav">
-        <a href="">
-          <img src="" alt="profile">
-          <p>Username</p>
-        </a>
-      </li>
+      {{#if session.isAuthenticated}}
+        <li class="userInfoNav">
+          {{#link-to 'user.index'}}
+            <img src="" alt="profile">
+            <p>{{session.user.id}}</p>
+          {{/link-to}}
+        </li>
+      {{/if}}
     </ul>      
   </nav>
 </header><!-- END Navigation -->
 
-<div class="postsContainer"><!-- Main content -->
+<div class="postsContainer">
   <div class="innerPostsContent">
 
     <div class="publishPost">
       <img src="" alt="">
-      <p>username</p>
-      <span>@username</span>
+      <p>Username</p>
+      <span>username</span>
       <button>Follow</button>
     </div>  
 
@@ -32,18 +36,6 @@
       <h3>Following</h3>
       <h3>Followers</h3>
     </div>
-{{!--     {{#each}}
-      <div class="eachPost">
-        <div class="postProfilePhoto">
-          <img src="" alt="Profile Photo">
-        </div>
-        <div class="eachPostContent">
-          <p class="postAuthor">{{user.username}}</p>
-          <p class="postContent">{{body}}</p>
-          <span class="timePosted">2 minutes ago</span>
-          <a class="deletePost" href="">Delete</a>
-        </div>
-      </div>
-    {{/each}}
+
   </div>
-</div><!-- End Main content --> --}}
+</div>
