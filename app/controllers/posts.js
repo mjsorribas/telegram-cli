@@ -1,4 +1,6 @@
 var PostsController = Ember.ArrayController.extend({
+  sortProperties: ['date'],
+  sortAscending: false,
   body: null,
   postBody: '',
   actions:{
