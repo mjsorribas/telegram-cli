@@ -1,0 +1,19 @@
+<div class="eachPost">
+  {{#view 'show-delete'}}
+  <div class="postProfilePhoto">
+    {{#link-to 'users' }}
+    <img src="" alt="Profile Photo">
+    {{/link-to}}
+  </div>
+  <div class="eachPostContent">
+    <p class="postAuthor"><strong>{{user.id}}</strong></p>
+    <p class="postContent">{{body}}</p>
+    <span class="timePosted"><em>{{format-date date}}</em></span>
+    {{#if view.entered}}
+      {{#if isAuthor}}   
+        <a class="deletePost" {{action "removePost" this}}>Delete</a>
+      {{/if}}
+    {{/if}}
+  </div>
+  {{/view}}
+</div>

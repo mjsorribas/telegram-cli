@@ -1,0 +1,23 @@
+<header class="postsHeader">
+  <nav>
+    <ul>
+      {{#if session.isAuthenticated}}
+        <li class="brand">
+          <img src="images/icon-home.png" alt="home icon">
+          {{#link-to 'posts' }}Home{{/link-to}}
+        </li>
+      {{/if}}
+      <li class="navLogo">
+        <img src="images/telegram-logo-small.png" alt="telegram logo">
+      </li>
+      {{#if session.isAuthenticated}}
+        <li class="userInfoNav">
+          {{#link-to 'user.index' user}}{{! Has to fix link-to}}
+            <img src="" alt="profile">
+            <p>{{session.user.id}}</p>
+          {{/link-to}}
+        </li>
+      {{/if}}
+    </ul>      
+  </nav>
+</header>

@@ -21,9 +21,13 @@ Done: <br>
 * Only logged in user can see navigation bar (home and username link)
 * Delete button of a post is only visible to the post's author
 * The publish post has a timestamp
+* Count for characters max 140 for a post.
 
 Todo: <br>
-* Count for characters max 140 for a post.
+* Display user's full name and username on UserIndex template
+* Make `link-to` work for username on navigation, it shold redirect to the user page.
+* Use component to reuse parts in posts.hbs in user page.
+
 * If loggedin, redirect to posts when visiting account managements.
 * User can logout.
 * User page (can see latest 10 posts)

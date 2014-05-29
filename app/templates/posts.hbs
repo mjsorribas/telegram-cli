@@ -1,26 +1,4 @@
-<header class="postsHeader">
-  <nav>
-    <ul>
-      {{#if session.isAuthenticated}}
-        <li class="brand">
-          <img src="images/icon-home.png" alt="home icon">
-          {{#link-to 'posts' }}Home{{/link-to}}
-        </li>
-      {{/if}}
-      <li class="navLogo">
-        <img src="images/telegram-logo-small.png" alt="telegram logo">
-      </li>
-      {{#if session.isAuthenticated}}
-        <li class="userInfoNav">
-          {{#link-to ''}}
-            <img src="" alt="profile">
-            <p>{{session.user.id}}</p>
-          {{/link-to}}
-        </li>
-      {{/if}}
-    </ul>      
-  </nav>
-</header>
+{{#nav-bar session=session}}{{/nav-bar}}
 
 <div class="postsContainer">
   <div class="innerPostsContent">
@@ -37,25 +15,8 @@
       <h3>Latest Posts</h3>
     </div>
     {{#each itemController="post"}}
-      <div class="eachPost">
-        {{#view 'show-delete'}}
-        <div class="postProfilePhoto">
-          {{#link-to 'users' }}
-          <img src="" alt="Profile Photo">
-          {{/link-to}}
-        </div>
-        <div class="eachPostContent">
-          <p class="postAuthor"><strong>{{user.id}}</strong></p>
-          <p class="postContent">{{body}}</p>
-          <span class="timePosted"><em>{{format-date date}}</em></span>
-          {{#if view.entered}}
-            {{#if isAuthor}}   
-              <a class="deletePost" {{action "removePost" this}}>Delete</a>
-            {{/if}}
-          {{/if}}
-        </div>
-        {{/view}}
-      </div>
+      {{#post-box　user=user body=body date=date isAuthor=isAuthor view=view action="removePost" param=this session=session}}
+      {{/post-box}}
     {{/each}}
   </div>
 </div>
