@@ -10,6 +10,9 @@
         <img src="" alt="telegram logo">
       </li>
       {{#if session.isAuthenticated}}
+        <li>
+          {{#link-to 'auth.register' }}Logout{{/link-to}}
+        </li>
         <li class="userInfoNav">
           {{#link-to ''}}
             <img src="" alt="profile">
@@ -37,7 +40,7 @@
     </div>
     {{#each itemController="post"}}
       <div class="eachPost">
-        {{#view 'posts'}}
+        {{#view 'show-delete'}}
         <div class="postProfilePhoto">
           {{#link-to 'users' }}
           <img src="" alt="Profile Photo">
@@ -46,7 +49,7 @@
         <div class="eachPostContent">
           <p class="postAuthor"><strong>{{user.id}}</strong></p>
           <p class="postContent">{{body}}</p>
-          <span class="timePosted"><em>{{ date}}</em></span>
+          <span class="timePosted"><em>{{format-date date}}</em></span>
           {{#if view.entered}}
             {{#if isAuthor}}   
               <a class="deletePost" {{action "removePost" this}}>Delete</a>

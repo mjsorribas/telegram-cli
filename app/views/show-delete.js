@@ -1,4 +1,4 @@
-var Posts = Ember.View.extend({
+export default Ember.View.extend({
   classNames: ['eachPostContent'],
   mouseEnter: function(){
     this.set('entered', true);
@@ -7,5 +7,3 @@ var Posts = Ember.View.extend({
     this.set('entered', false);
   }
 });
-
-export default Posts;

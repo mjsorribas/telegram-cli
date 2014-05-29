@@ -20,19 +20,26 @@ Done: <br>
 * Only logged in user can publish a post
 * Only logged in user can see navigation bar (home and username link)
 * Delete button of a post is only visible to the post's author
+* The publish post has a timestamp
 
 Todo: <br>
-* The publish post has a timestamp
+* Count for characters max 140 for a post.
+* If loggedin, redirect to posts when visiting account managements.
+* User can logout.
+* User page (can see latest 10 posts)
 * User page (following & followers)
 * User can follow another user
 * User can see the followers & followees
 * User can see the followee's posts in '/posts'
-
+* User can unfollow
 Later <br>
 * User can reset password / sent by email
 * User can set his/her profile avatar
 * User can repost a post from another user
 
+* Notification of new post from followee
+* Private message
+* 
 (server-side) <br>
 * User cannot regiser with duplicate username nor email
 * Setup database to save user info, posts

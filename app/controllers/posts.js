@@ -7,7 +7,7 @@ var PostsController = Ember.ArrayController.extend({
       if(body){
         var post = this.store.createRecord('post',{
           body: body,
-          user: this.get('session').user,
+          user: this.get('session.user'),
           date: new Date()
         });
         post.save().then(function(){
@@ -16,7 +16,7 @@ var PostsController = Ember.ArrayController.extend({
       } 
     },
     removePost: function(item) {
-      if(this.get('session').user && item.get('user') === this.get('session').user){
+      if(this.get('session.user') && item.get('user') === this.get('session.user')){
         item.deleteRecord();
         item.save();
       } else {
