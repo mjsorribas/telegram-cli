@@ -1,41 +1,5 @@
-<header class="postsHeader"><!-- Navigation -->
-  <nav>
-    <ul>
-      {{#if session.isAuthenticated}}
-        <li class="brand">
-          {{#link-to 'posts' }}Home{{/link-to}}
-        </li>
-      {{/if}}
-      <li class="navLogo">
-        <img src="" alt="telegram logo">
-      </li>
-      {{#if session.isAuthenticated}}
-        <li class="userInfoNav">
-          {{#link-to 'user.index'}}
-            <img src="" alt="profile">
-            <p>{{session.user.id}}</p>
-          {{/link-to}}
-        </li>
-      {{/if}}
-    </ul>      
-  </nav>
-</header><!-- END Navigation -->
-
-<div class="postsContainer">
-  <div class="innerPostsContent">
-
-    <div class="publishPost">
-      <img src="" alt="">
-      <p>Username</p>
-      <span>username</span>
-      <button>Follow</button>
-    </div>  
-
-    <div class="latestPostsTitle">
-      <h3>Posts</h3>
-      <h3>Following</h3>
-      <h3>Followers</h3>
-    </div>
-
-  </div>
+<div class="latestPostsTitle">
+  <h3 class="activePage">Posts</h3>
+  <h3>{{#link-to "user.following"}}Following{{/link-to}}</h3>
+  <h3>{{#link-to "user.followers"}}Followers{{/link-to}}</h3>
 </div>

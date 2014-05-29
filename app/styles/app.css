@@ -1,4 +1,4 @@
- General 
+/* General 
 ======================================== */
 html, body{
   font-family: 'Open Sans', sans-serif;  
@@ -35,12 +35,17 @@ button:focus {
 
 button:active {
   border-color: #0000CD;
-  background-color: #DFDFDF;
+  /*background-color: #DFDFDF;*/
 }
 
 /* Color 
 ======================================== */
-.home-box {
+.home-box,
+.postsContainer,
+.postsHeader,
+.publish-button,
+.login-button,
+.followButton {
   background-color: #fff;
 }
 
@@ -55,13 +60,12 @@ button:active {
 
 a,
 .login-button,
-.recover-pass {
+.recover-pass,
+.followButton,
+.latestPostsTitle h3 {
   color: #0084B2;
 }
 
-.login-button {
-  background-color: #fff;
-}
 
 /* Placeholder font color */
 input.username-password::-webkit-input-placeholder{
@@ -80,7 +84,8 @@ input.username-password:-ms-input-placeholder{
 /* Posts apge */
 ul li.brand > a,
 .userInfoNav > a,
-.latestPostsTitle h3 {
+.latestPostsTitle h3,
+.username {
   color: #AAA;
 }
 
@@ -91,23 +96,24 @@ ul li.brand > a,
 }
 
 .username-password,
-.recover-pass {
+.recover-pass,
+span.or,
+.recoveryText,
+.login-button  {
   font-size: 13px;
 }
 
 .login-button {
-  font-size: 13px;
   font-weight: bold;
 }
 
-span.or {
-  font-size: 13px;
+.followButton{
+  font-size: 15px;
 }
 
-.recoveryText {
-  font-size: 13px;
+.profileArea > p{
+  font-size: 18px;
 }
-
 
 /* Styling 
 ======================================== */
@@ -200,7 +206,7 @@ img.postmark {
 .login-button {
   margin-top:15px;
   padding: 5px 7px;
-  border: 1px solid #0084B2;;
+  border: 1px solid #0084B2;
   float: left;
 }
 
@@ -221,7 +227,6 @@ img.postmark {
   top: 0;
   height: 50px;
   width: 100%;
-  background-color:#fff;
   margin: 0;
   -webkit-box-shadow: 0 1px 1px  #DDD;
      -moz-box-shadow: 0 1px 1px  #DDD;
@@ -246,9 +251,6 @@ img.postmark {
   vertical-align: top;
 }
 
-.navLogo {
-}
-
 .userInfoNav {
   float: right;
   margin-right: 20px;
@@ -268,7 +270,6 @@ img.postmark {
 /*   Content Area  
 ================================ */
 .postsContainer {
-  background: #fff;
   min-height: 560px;
   width: 100%;
   margin-top: 50px;
@@ -303,7 +304,6 @@ img.postmark {
 .publish-button {
   float: right;
   padding: 8px 8px;
-  background-color: #fff;
   border: 1px solid #0084B2;;
 }
 
@@ -369,4 +369,40 @@ img.postmark {
 .deletePost {
   display: inline-block;
   margin-left: 10px;
+}
+
+/* =========================
+        User page - template user
+========================= */
+.profileArea{
+  text-align: center;
+}
+.profileAvatar{
+  height: 80px;
+  width: 80px;
+  margin-bottom: 10px;
+}
+.profileArea > p{
+  margin:0;
+}
+.username{
+  margin-top:5px;
+}
+.followButton{
+  margin-top: 10px;
+  padding: 6px 8px;
+  border: 1px solid #0084B2;
+}
+
+.latestPostsTitle h3{
+  display: inline-block;
+  margin: 0 15px;
+  margin-top: 13px;
+  color: #0084B2;
+  height: 70%;
+}
+
+.latestPostsTitle h3.activePage{
+  box-shadow: 0 2px 0 #0084B2;
+  color: #AAA;
 }
