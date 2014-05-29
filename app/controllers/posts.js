@@ -1,5 +1,6 @@
 var PostsController = Ember.ArrayController.extend({
   body: null,
+  postBody: '',
   actions:{
     publishPost: function(){
       var self = this;
@@ -22,8 +23,13 @@ var PostsController = Ember.ArrayController.extend({
       } else {
         console.log("You are not this post's author");
       }
-    },
-  }
+    }
+  },
+  charCount: function(){
+    var charCount = this.get('postBody').length || 0;
+    var count = 140 - charCount;
+    return count;
+  }.property('postBody')
 });
 
 export default PostsController;

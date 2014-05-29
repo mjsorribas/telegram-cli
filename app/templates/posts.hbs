@@ -3,16 +3,14 @@
     <ul>
       {{#if session.isAuthenticated}}
         <li class="brand">
+          <img src="images/icon-home.png" alt="home icon">
           {{#link-to 'posts' }}Home{{/link-to}}
         </li>
       {{/if}}
       <li class="navLogo">
-        <img src="" alt="telegram logo">
+        <img src="images/telegram-logo-small.png" alt="telegram logo">
       </li>
       {{#if session.isAuthenticated}}
-        <li>
-          {{#link-to 'auth.register' }}Logout{{/link-to}}
-        </li>
         <li class="userInfoNav">
           {{#link-to ''}}
             <img src="" alt="profile">
@@ -31,7 +29,7 @@
         <form action="POST">
           {{textarea class="postInput" maxlength="140" placeholder="Write and publish ..." value=postBody}}
           <button class="publish-button" type="submit" {{action "publishPost"}}>Publish</button>
-          <span>140 characters</span>
+          <span>{{charCount}} characters left</span>
         </form>
       </div>  
     {{/if}}

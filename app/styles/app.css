@@ -235,8 +235,15 @@ img.postmark {
   display: inline-block;
 }
 
+.postsHeader nav ul li >img {
+  margin-top: -5px;
+}
+
 .brand {
   float: left;
+}
+.brand > a {
+  vertical-align: top;
 }
 
 .navLogo {
