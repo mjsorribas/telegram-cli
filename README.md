@@ -22,6 +22,7 @@ Done: <br>
 * Delete button of a post is only visible to the post's author
 * The publish post has a timestamp
 * Count for characters max 140 for a post.
+* Used components to organize codes (post-box, nav-bar)
 
 Todo: <br>
 * Display user's full name and username on UserIndex template
