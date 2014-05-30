@@ -1,5 +1,4 @@
-{{#nav-bar session=session}}{{/nav-bar}}
-
+{{nav-bar session=session}}
 <div class="postsContainer">
   <div class="innerPostsContent">
     {{#if session.isAuthenticated}}
@@ -15,8 +14,7 @@
       <h3>Latest Posts</h3>
     </div>
     {{#each itemController="post"}}
-      {{#post-box　user=user body=body date=date isAuthor=isAuthor view=view action="removePost" param=this session=session}}
-      {{/post-box}}
+      {{post-box　user=user body=body date=date isAuthor=isAuthor view=view session=session action="removePost" item=this}}
     {{/each}}
   </div>
 </div>

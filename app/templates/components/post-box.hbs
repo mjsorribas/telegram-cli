@@ -11,7 +11,7 @@
     <span class="timePosted"><em>{{format-date date}}</em></span>
     {{#if view.entered}}
       {{#if isAuthor}}   
-        <a class="deletePost" {{action "removePost" this}}>Delete</a>
+        <a class="deletePost" {{action "removePost" item}}>Delete</a>
       {{/if}}
     {{/if}}
   </div>
