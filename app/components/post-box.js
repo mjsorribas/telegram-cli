@@ -1,5 +1,8 @@
 export default Ember.Component.extend({
-  click: function() {
-    this.sendAction('removePost', this.get('item'));
+  actions: {
+    removePostTrigger: function(){
+      this.sendAction('sendToController', this.get('this'));
+      console.log(this.get('this'));
+    }
   }
 });
