@@ -5,7 +5,7 @@
     {{/link-to}}
   </div>
   <div class="eachPostContent">
-    <p class="postAuthor"><strong>{{post.user.id}}</strong></p>
+    <p class="postAuthor"><strong>{{#link-to 'user' post.user.id}}{{post.user.id}}{{/link-to}}</strong></p>
     <p class="postContent">{{post.body}}</p>
     <span class="timePosted"><em>{{format-date date}}</em></span>
       {{#if showDeleteButton}}

@@ -25,10 +25,10 @@ Done: <br>
 * Used components to organize codes (post-box, nav-bar)
 * --- refactored : [Components: got stuck and learned](https://gist.github.com/yhagio/2829c2ca73291003abab)
 * Make `link-to` work for username on navigation, it should redirect to the user page.
+* Display user's full name and username on UserIndex template
+* Link-to username of each post on Posts page
 
 Todo: <br>
-* Display user's full name and username on UserIndex template
-
 * If loggedin, redirect to posts when visiting account managements.
 * User can logout.
 * User page (can see latest 10 posts)
