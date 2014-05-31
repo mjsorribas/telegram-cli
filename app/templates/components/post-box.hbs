@@ -1,5 +1,4 @@
 <div class="eachPost">
-  {{#view 'show-delete'}}
   <div class="postProfilePhoto">
     {{#link-to 'users' }}
     <img src="" alt="Profile Photo">
@@ -10,12 +9,7 @@
     <p class="postContent">{{post.body}}</p>
     <span class="timePosted"><em>{{format-date date}}</em></span>
       {{#if showDeleteButton}}
-{{!--     {{#if view.entered}}
-      {{#if isAuthor}}  --}}  
         <a class="deletePost" {{action "removePost" post}}>Delete</a>
-{{!--       {{/if}}
-    {{/if}} --}}
       {{/if}}
   </div>
-  {{/view}}
 </div>
