@@ -24,11 +24,10 @@ Done: <br>
 * Count for characters max 140 for a post.
 * Used components to organize codes (post-box, nav-bar)
 * --- refactored : [Components: got stuck and learned](https://gist.github.com/yhagio/2829c2ca73291003abab)
+* Make `link-to` work for username on navigation, it should redirect to the user page.
 
 Todo: <br>
 * Display user's full name and username on UserIndex template
-* Make `link-to` work for username on navigation, it shold redirect to the user page.
-* Use component to reuse parts in posts.hbs in user page.
 
 * If loggedin, redirect to posts when visiting account managements.
 * User can logout.
