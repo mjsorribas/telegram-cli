@@ -1,10 +1,4 @@
-<div class="profileArea">
-  <img class="profileAvatar" src="" alt="">
-  <p><strong>{{model.name}}</strong></p>
-  <p class="username">@{{model.id}}</p>
-  <button class="followButton">Follow</button>
-</div>  
-
+ {{user-profile model=model}}
 <div class="latestPostsTitle">
   <h3 class="activePage">Posts</h3>
   <h3>{{#link-to "user.following"}}Following{{/link-to}}</h3>
