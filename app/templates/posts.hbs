@@ -14,7 +14,7 @@
       <h3>Latest Posts</h3>
     </div>
     {{#each itemController="post"}}
-      {{post-box　user=user body=body date=date isAuthor=isAuthor view=view session=session sendToController="removePost" this=this}}
+      {{post-box　user=session.user post=this}}
     {{/each}}
   </div>
 </div>

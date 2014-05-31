@@ -6,14 +6,16 @@
     {{/link-to}}
   </div>
   <div class="eachPostContent">
-    <p class="postAuthor"><strong>{{user.id}}</strong></p>
-    <p class="postContent">{{body}}</p>
+    <p class="postAuthor"><strong>{{post.user.id}}</strong></p>
+    <p class="postContent">{{post.body}}</p>
     <span class="timePosted"><em>{{format-date date}}</em></span>
-    {{#if view.entered}}
-      {{#if isAuthor}}   
-        <a class="deletePost" {{action "removePostTrigger" this}}>Delete</a>
+      {{#if showDeleteButton}}
+{{!--     {{#if view.entered}}
+      {{#if isAuthor}}  --}}  
+        <a class="deletePost" {{action "removePost" post}}>Delete</a>
+{{!--       {{/if}}
+    {{/if}} --}}
       {{/if}}
-    {{/if}}
   </div>
   {{/view}}
 </div>

@@ -17,15 +17,16 @@ var PostsController = Ember.ArrayController.extend({
           self.set('postBody', '');
         });
       } 
-    },
-    removePost: function(item) {
-      if(this.get('session.user') && item.get('user') === this.get('session.user')){
-        item.get('model').deleteRecord();
-        item.get('model').save();
-      } else {
-        console.log("You are not this post's author");
-      }
     }
+    // ,
+    // removePost: function(item) {
+    //   if(this.get('session.user') && item.get('user') === this.get('session.user')){
+    //     item.get('model').deleteRecord();
+    //     item.get('model').save();
+    //   } else {
+    //     console.log("You are not this post's author");
+    //   }
+    // }
   },
   charCount: function(){
     var charCount = this.get('postBody').length || 0;
