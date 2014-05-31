@@ -12,7 +12,7 @@
       </li>
       {{#if session.isAuthenticated}}
         <li class="userInfoNav">
-          {{#link-to 'user.index' user}}{{! Has to fix link-to}}
+          {{#link-to 'user' session.user.id}}
             <img src="" alt="profile">
             <p>{{session.user.id}}</p>
           {{/link-to}}

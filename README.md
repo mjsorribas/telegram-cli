@@ -20,9 +20,10 @@ Done: <br>
 * Only logged in user can publish a post
 * Only logged in user can see navigation bar (home and username link)
 * Delete button of a post is only visible to the post's author
-* The publish post has a timestamp
+* The publish post has a timestamp [naming convention](https://gist.github.com/yhagio/129ec15371c60a2741ce)
 * Count for characters max 140 for a post.
 * Used components to organize codes (post-box, nav-bar)
+* --- refactored : [Components: got stuck and learned](https://gist.github.com/yhagio/2829c2ca73291003abab)
 
 Todo: <br>
 * Display user's full name and username on UserIndex template
