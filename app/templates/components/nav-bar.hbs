@@ -8,7 +8,9 @@
         </li>
       {{/if}}
       <li class="navLogo">
-        <img src="images/telegram-logo-small.png" alt="telegram logo">
+        {{#link-to 'posts' }}
+          <img src="images/telegram-logo-small.png" alt="telegram logo">
+        {{/link-to}}
       </li>
       {{#if session.isAuthenticated}}
         <li class="userInfoNav">

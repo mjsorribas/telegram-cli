@@ -250,6 +250,9 @@ img.postmark {
 .brand > a {
   vertical-align: top;
 }
+.navLogo{
+  margin-top: -5px;
+}
 
 .userInfoNav {
   float: right;

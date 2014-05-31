@@ -12,8 +12,6 @@ Logged-in user can publish posts. <br>
 
 Done: <br>
 * Styling mockup
-
-(client-side) <br>
 * User can register (name, username=id, email, password)
 * User can login (username and password)
 * User can request 'forget password'
@@ -44,8 +42,7 @@ Later <br>
 
 * Notification of new post from followee
 * Private message
-* 
-(server-side) <br>
+
 * User cannot regiser with duplicate username nor email
 * Setup database to save user info, posts
 
