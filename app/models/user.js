@@ -3,6 +3,7 @@ var User = DS.Model.extend({
   email: DS.attr('string'),
   password: DS.attr('string'),
   posts: DS.hasMany('post'),
+  avatar: DS.attr('string')
 });
 
 User.reopenClass({
@@ -10,22 +11,26 @@ User.reopenClass({
     id: 'will',
     name: 'Will Smith',
     email: 'will@example.com',
-    password: 'password'
+    password: 'password',
+    avatar: 'images/will.jpg'
   },{
     id: 'beyonce',
     name: 'Beyonce Knowles',
     email: 'beyonce@example.com',
-    password: 'password'
+    password: 'password',
+    avatar: 'images/beyonce.jpeg'
   },{
     id: 'joseph',
     name: 'Joseph Gordon-Levitt',
     email: 'joseph@example.com',
-    password: 'password'
+    password: 'password',
+    avatar: 'images/joseph.jpeg'
   },{
     id: 'gal',
     name: 'Gal Gagot',
     email: 'gal@example.com',
-    password: 'password'
+    password: 'password',
+    avatar: 'images/gal.jpg'
   }]
 });
 

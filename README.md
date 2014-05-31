@@ -25,6 +25,8 @@ Done: <br>
 * Make `link-to` work for username on navigation, it should redirect to the user page.
 * Display user's full name and username on UserIndex template
 * Link-to username of each post on Posts page
+* Link-to Telegram image on navbar
+* User-profile.hbs components created
 
 Todo: <br>
 * If loggedin, redirect to posts when visiting account managements.

@@ -1,7 +1,7 @@
 <div class="eachPost">
   <div class="postProfilePhoto">
     {{#link-to 'users' }}
-    <img src="" alt="Profile Photo">
+    <img {{bind-attr src=post.user.avatar}} alt="Profile Photo">
     {{/link-to}}
   </div>
   <div class="eachPostContent">
@@ -13,7 +13,7 @@
       </strong>
     </p>
     <p class="postContent">{{post.body}}</p>
-    <span class="timePosted"><em>{{format-date date}}</em></span>
+    <span class="timePosted"><em>{{format-date post.date}}</em></span>
       {{#if showDeleteButton}}
         <a class="deletePost" {{action "removePost" post}}>Delete</a>
       {{/if}}

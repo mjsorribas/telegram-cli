@@ -1,5 +1,5 @@
 <div class="profileArea">
-  <img class="profileAvatar" src="" alt="">
+  <img class="profileAvatar" {{bind-attr src=model.avatar}} alt="Profile Image">
   <p><strong>{{model.name}}</strong></p>
   <p class="username">@{{model.id}}</p>
   <button class="followButton">Follow</button>

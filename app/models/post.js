@@ -9,17 +9,22 @@ Post.reopenClass({
     id: 1,
     body: 'Hello world! This is the oldest post!',
     user: 'will',
-    date: 'Tue, 26 May 2014 21:33:32 GMT'
+    date: 'Tue, 06 May 2014 21:03:32 GMT'
   },{
     id: 2,
-    body: 'Hey hoo! Second oldest post!',
-    user: 'gal',
-    date: 'Tue, 27 May 2014 20:33:32 GMT'
+    body: 'Salut! This is 2nd oldest post, from Joseph!',
+    user: 'joseph',
+    date: 'Sat, 10 May 2014 21:33:30 GMT'
   },{
     id: 3,
-    body: 'What up! Tis is latest post!',
+    body: 'Hey everyone, I am Gal Gagot!',
+    user: 'gal',
+    date: 'Tue, 20 May 2014 22:33:32 GMT'
+  },{
+    id: 4,
+    body: 'What up! This is latest post!',
     user: 'beyonce',
-    date: 'Tue, 27 May 2014 21:33:30 GMT'
+    date: 'Thu, 29 May 2014 23:33:30 GMT'
   }]
 });
 
