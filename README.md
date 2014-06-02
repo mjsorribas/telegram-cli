@@ -29,8 +29,9 @@ Logged-in user can publish posts. <br>
 * User-profile.hbs components created
 * Display each user's posts in a user's page (UserIndex - posts)
 
-#### Current issue:
+#### Current issue and the point where I got stuck:
 * Issue [Error: Attempted to handle event `pushedData` on <telegram-cli@model:post::ember425:1> while in state root.deleted.uncommitted.](https://gist.github.com/yhagio/080d8af5e8b9c3d027a3/edit)
+* Cannot sort the user's posts descending order by date in UserIndex.hbs
 
 #### Todo: 
 * If loggedin, redirect to posts when visiting account managements.
