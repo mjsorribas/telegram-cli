@@ -1,0 +1,17 @@
+<div class="eachPost followRow">
+  <div class="postProfilePhoto">
+    {{#link-to 'user' user.id}}
+    <img {{bind-attr src=user.avatar}} alt="Profile Photo">
+    {{/link-to}}
+  </div>
+  <div class="eachPostContent">
+    <p class="postAuthor">
+      <strong>
+        {{#link-to 'user' user.id}}
+          {{user.id}}
+        {{/link-to}}
+      </strong>
+    </p>
+    <button class="followButton toRight">Follow</button>
+  </div>
+</div>

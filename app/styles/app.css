@@ -409,3 +409,13 @@ img.postmark {
   box-shadow: 0 2px 0 #0084B2;
   color: #AAA;
 }
+
+/* Following */
+.followRow{
+  height: 75px;
+}
+
+.toRight{
+  float: right;
+  margin-top: -2px;
+}

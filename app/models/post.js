@@ -7,7 +7,7 @@ var Post = DS.Model.extend({
 Post.reopenClass({
   FIXTURES:[{
     id: 1,
-    body: 'Hello world! This is the oldest post!',
+    body: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad mini',
     user: 'will',
     date: 'Tue, 06 May 2014 21:03:32 GMT'
   },{
