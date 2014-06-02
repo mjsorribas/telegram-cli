@@ -10,7 +10,7 @@ User can register/login. <br>
 User is redirected to /posts once registered or logged-in. <br>
 Logged-in user can publish posts. <br>
 
-Done: <br>
+#### Done: 
 * Styling mockup
 * User can register (name, username=id, email, password)
 * User can login (username and password)
@@ -27,8 +27,12 @@ Done: <br>
 * Link-to username of each post on Posts page
 * Link-to Telegram image on navbar
 * User-profile.hbs components created
+* Display each user's posts in a user's page (UserIndex - posts)
 
-Todo: <br>
+#### Current issue:
+* Issue [Error: Attempted to handle event `pushedData` on <telegram-cli@model:post::ember425:1> while in state root.deleted.uncommitted.](https://gist.github.com/yhagio/080d8af5e8b9c3d027a3/edit)
+
+#### Todo: 
 * If loggedin, redirect to posts when visiting account managements.
 * User can logout.
 * User page (can see latest 10 posts)

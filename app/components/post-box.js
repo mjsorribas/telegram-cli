@@ -14,7 +14,7 @@ export default Ember.Component.extend({
   }.property('user', 'post.user'),
 
   showDeleteButton: function(){
-    return this.get('isAuthor') && this.get('isMouseOver')
+    return this.get('isAuthor') && this.get('isMouseOver');
   }.property('isAuthor', 'isMouseOver'),
 
   actions: {

@@ -1,6 +1,9 @@
- {{user-profile model=model}}
+{{user-profile model=model}}
 <div class="latestPostsTitle">
   <h3 class="activePage">Posts</h3>
   <h3>{{#link-to "user.following"}}Following{{/link-to}}</h3>
   <h3>{{#link-to "user.followers"}}Followers{{/link-to}}</h3>
 </div>
+{{#each post in model.posts}}
+  {{post-box user=controller.session.user post=post}}
+{{/each}}
