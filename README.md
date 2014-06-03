@@ -30,30 +30,33 @@ Logged-in user can publish posts. <br>
 * Display each user's posts in a user's page (UserIndex - posts)
 * Forgot to put `save()`. Issue [Error: Attempted to handle event `pushedData` on <telegram-cli@model:post::ember425:1> while in state root.deleted.uncommitted.](https://gist.github.com/yhagio/080d8af5e8b9c3d027a3/edit)
 * Duplicate usage of follow-user and user-profile components in files in `/user/..`
+* Sort the user's posts descending order by date in UserIndex.hbs [https://gist.github.com/yhagio/5038f6c0271da810d8c2](https://gist.github.com/yhagio/5038f6c0271da810d8c2)
 
 #### Current issue and the point where I got stuck:
-* Cannot sort the user's posts descending order by date in UserIndex.hbs
-* Follow-user.hbs in components mockup (need to be refactored once following function implemented)
-
+* User can logout. (Just created a logout button on nav-bar, need to create action "logout" in components)
 
 #### Todo: 
 * If loggedin, redirect to posts when visiting account managements.
-* User can logout.
+
 * User page (can see latest 10 posts)
-* User page (following & followers)
+
 * User can follow another user
 * User can see the followers & followees
 * User can see the followee's posts in '/posts'
 * User can unfollow
-Later <br>
-* User can reset password / sent by email
-* User can set his/her profile avatar
+
+* User can set his/her profile avatar (Upload and save it)
 * User can repost a post from another user
 
-* Notification of new post from followee
-* Private message
-
+* Save user information in database
+* Save posts in database
 * User cannot regiser with duplicate username nor email
-* Setup database to save user info, posts
 
+* Notification of new post from followee
+* User can reset password / sent by email (Need Email service)
+
+
+#### Additional 
+
+* Private message
 

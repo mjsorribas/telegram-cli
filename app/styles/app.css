@@ -270,6 +270,14 @@ img.postmark {
   vertical-align: middle;
 }
 
+.logout{
+  margin-left: 10px;
+  vertical-align: top;
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 3px 7px 3px 5px;
+}
+
 /*   Content Area  
 ================================ */
 .postsContainer {

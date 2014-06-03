@@ -18,6 +18,9 @@
             <img {{bind-attr src=session.user.avatar}} alt="profile">
             <p>{{session.user.id}}</p>
           {{/link-to}}
+          {{#link-to 'auth.login'}}
+            <p class="logout"  {{action "logout" session.user}}>Logout</p>
+          {{/link-to}}
         </li>
       {{/if}}
     </ul>      
