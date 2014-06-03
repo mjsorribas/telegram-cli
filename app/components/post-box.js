@@ -20,6 +20,7 @@ export default Ember.Component.extend({
   actions: {
     removePost: function(post){
       post.deleteRecord();
+      post.save();
     }
   }
 });

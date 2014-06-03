@@ -1,5 +1,5 @@
 var UserIndexRoute = Ember.Route.extend({
-  model: function(params) {
+  model: function() {
     return this.modelFor('user');
   }
 });

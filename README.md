@@ -28,10 +28,13 @@ Logged-in user can publish posts. <br>
 * Link-to Telegram image on navbar
 * User-profile.hbs components created
 * Display each user's posts in a user's page (UserIndex - posts)
+* Forgot to put `save()`. Issue [Error: Attempted to handle event `pushedData` on <telegram-cli@model:post::ember425:1> while in state root.deleted.uncommitted.](https://gist.github.com/yhagio/080d8af5e8b9c3d027a3/edit)
+* Duplicate usage of follow-user and user-profile components in files in `/user/..`
 
 #### Current issue and the point where I got stuck:
-* Issue [Error: Attempted to handle event `pushedData` on <telegram-cli@model:post::ember425:1> while in state root.deleted.uncommitted.](https://gist.github.com/yhagio/080d8af5e8b9c3d027a3/edit)
 * Cannot sort the user's posts descending order by date in UserIndex.hbs
+* Follow-user.hbs in components mockup (need to be refactored once following function implemented)
+
 
 #### Todo: 
 * If loggedin, redirect to posts when visiting account managements.
