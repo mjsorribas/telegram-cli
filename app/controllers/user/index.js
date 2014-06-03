@@ -1,7 +1,11 @@
 var UserIndexController = Ember.ObjectController.extend({
-  // WIP: This is not working
-  sortProperties: ['posts.date'],
-  sortAscending: false
+  posts: (function() {
+    return Ember.ArrayProxy.createWithMixins(Ember.SortableMixin, {
+      sortProperties: ['date'],
+      sortAscending: false,
+      content: this.get('model.posts')
+    });
+  }).property('model.posts')
 });
 
 export default UserIndexController;
