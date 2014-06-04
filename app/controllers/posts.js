@@ -23,7 +23,10 @@ var PostsController = Ember.ArrayController.extend({
     var charCount = this.get('postBody').length || 0;
     var count = 140 - charCount;
     return count;
-  }.property('postBody')
+  }.property('postBody'),
+  logout: function(){
+    this.transitionToRoute('auth.login');
+  }
 });
 
 export default PostsController;

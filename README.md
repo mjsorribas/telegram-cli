@@ -33,7 +33,7 @@ Logged-in user can publish posts. <br>
 * Sort the user's posts descending order by date in UserIndex.hbs [https://gist.github.com/yhagio/5038f6c0271da810d8c2](https://gist.github.com/yhagio/5038f6c0271da810d8c2)
 
 #### Current issue and the point where I got stuck:
-* User can logout. (Just created a logout button on nav-bar, need to create action "logout" in components)
+* User can logout and redirected to login page (Need to refactor transitionToRoute function since it is duplicated in every page that has nav-bar)
 
 #### Todo: 
 * If loggedin, redirect to posts when visiting account managements.
