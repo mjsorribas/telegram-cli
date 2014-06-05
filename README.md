@@ -34,24 +34,30 @@ Logged-in user can publish posts. <br>
 
 #### Current issue and the point where I got stuck:
 * User can logout and redirected to login page (Need to refactor transitionToRoute function since it is duplicated in every page that has nav-bar)
+* User can follow another user
+* Edge cases: What if a user has 1 million posts / 1 million followers?
 
 #### Todo: 
-* If loggedin, redirect to posts when visiting account managements.
-
-* User page (can see latest 10 posts)
-
-* User can follow another user
-* User can see the followers & followees
-* User can see the followee's posts in '/posts'
-* User can unfollow
-
-* User can set his/her profile avatar (Upload and save it)
-* User can repost a post from another user
-
+* Setup server side (MongoDB, Node.js)
 * Save user information in database
 * Save posts in database
 * User cannot regiser with duplicate username nor email
+* If loggedin, redirect to posts when visiting account managements. 
+[Ember.js Transition](http://emberjs.com/guides/routing/preventing-and-retrying-transitions/) Implement once server is hooked, like this (I guess) and [Ember.js Asynchronous Routing](http://emberjs.com/guides/routing/asynchronous-routing/)
+```js routes/auth/register.js
+	beforeModel: function(){
+		if(this.get('session.user')){
+			this.transitionTo('posts');
+		}
+	}
+```
+* User page (Non loggedin or non following user can see latest 10 posts of a user)
 
+* User can see the followers & followees
+* User can see the followee's posts in '/posts'
+* User can unfollow
+* User can set his/her profile avatar (Upload and save it)
+* User can repost a post from another user
 * Notification of new post from followee
 * User can reset password / sent by email (Need Email service)
 

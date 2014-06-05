@@ -16,7 +16,6 @@ body.ember-application {
 
 a {
   text-decoration: none;
-  cursor: default;
 }
 
 div.ember-view {
@@ -36,6 +35,11 @@ button:focus {
 button:active {
   border-color: #0000CD;
   /*background-color: #DFDFDF;*/
+}
+
+a:hover,
+button:hover {
+  cursor: pointer;
 }
 
 /* Color 
