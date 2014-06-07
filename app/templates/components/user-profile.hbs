@@ -2,5 +2,11 @@
   <img class="profileAvatar" {{bind-attr src=user.avatar}} alt="Profile Image">
   <p><strong>{{user.name}}</strong></p>
   <p class="username">@{{user.id}}</p>
-  <button class="followButton" {{action "follow" user}}>Follow</button>
+  {{#unless isYou}}
+	  {{#if user.followedByCurrentUser}}
+	  	<button class="followButton" {{action "follow" user}}>Unfollow</button>
+	  {{else}}
+			<button class="followButton" {{action "follow" user}}>Follow</button>
+	  {{/if}}
+  {{/unless}}
 </div> 
