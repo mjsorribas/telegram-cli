@@ -6,6 +6,8 @@ Tool: Ember-cli
 Operating System: Virtualbox Ubuntu 64bit
 ```
 
+* Server side repo: [https://github.com/yhagio/telegram-server](https://github.com/yhagio/telegram-server)
+
 User can register/login. <br>
 User is redirected to /posts once registered or logged-in. <br>
 Logged-in user can publish posts. <br>
