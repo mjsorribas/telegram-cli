@@ -3,8 +3,8 @@ var User = DS.Model.extend({
   email: DS.attr('string'),
   password: DS.attr('string'),
   posts: DS.hasMany('post'),
-  avatar: DS.attr('string')
-  ,follwees: DS.hasMany('followership')
+  avatar: DS.attr('string'),
+  followedByCurrentUser: DS.attr('boolean', {defaultValue: false})
 });
 
 User.reopenClass({
