@@ -4,6 +4,7 @@ var User = DS.Model.extend({
   password: DS.attr('string'),
   posts: DS.hasMany('post'),
   avatar: DS.attr('string')
+  ,follwees: DS.hasMany('followership')
 });
 
 User.reopenClass({
