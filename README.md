@@ -33,9 +33,10 @@ Logged-in user can publish posts. <br>
 * Sort the user's posts descending order by date in UserIndex.hbs [https://gist.github.com/yhagio/5038f6c0271da810d8c2](https://gist.github.com/yhagio/5038f6c0271da810d8c2)
 
 #### Current issue and the point where I got stuck:
-* User can logout and redirected to login page (Need to refactor transitionToRoute function since it is duplicated in every page that has nav-bar)
-* User can follow another user
-* Edge cases: What if a user has 1 million posts / 1 million followers?
+* Refactor: User can logout and redirected to login page (Need to refactor transitionToRoute function since it is duplicated in every page that has nav-bar)
+
+* Edge cases: What if a user has 1 million posts / 1 million followers? [https://gist.github.com/yhagio/a527a79b034bd0cf7c76](https://gist.github.com/yhagio/a527a79b034bd0cf7c76)
+* User can follow another user [https://gist.github.com/yhagio/8ce153dccae24643241a](https://gist.github.com/yhagio/8ce153dccae24643241a)
 
 #### Todo: 
 * Setup server side (MongoDB, Node.js)
@@ -65,4 +66,3 @@ Logged-in user can publish posts. <br>
 #### Additional 
 
 * Private message
-
