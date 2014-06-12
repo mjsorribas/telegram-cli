@@ -17,16 +17,17 @@ var AuthLoginController = Ember.ObjectController.extend({
 
       var self = this;
       var onSuccess = function(authenticatedUser){
-        if(userInfo.password === authenticatedUser.get('password')){
+        // if(userInfo.password === authenticatedUser.get('password')){
+          console.log('authenticatedUser '+authenticatedUser);
           self.set('session.user', authenticatedUser);
           self.setProperties({
             'username': '',
             'password': ''
           });
           self.transitionToRoute('posts');
-        } else {
-          self.set('error', 'Please check your password and try again');
-        }  
+        // } else {
+        //   self.set('error', 'Please check your password and try again');
+        // }  
       };
       var onFail = function(){
         self.set('error', "The user doesn't exist");
