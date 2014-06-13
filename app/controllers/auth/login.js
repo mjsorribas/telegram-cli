@@ -17,22 +17,23 @@ var AuthLoginController = Ember.ObjectController.extend({
 
       var self = this;
       var onSuccess = function(authenticatedUser){
-        // if(userInfo.password === authenticatedUser.get('password')){
-          console.log('authenticatedUser '+authenticatedUser);
+        if(userInfo.password === authenticatedUser.get('password')){
           self.set('session.user', authenticatedUser);
           self.setProperties({
             'username': '',
             'password': ''
           });
           self.transitionToRoute('posts');
-        // } else {
-        //   self.set('error', 'Please check your password and try again');
-        // }  
+        } else {
+          // console.log('authenticatedUser = '+authenticatedUser);
+          // console.log('userInfo = '+userInfo);
+          self.set('error', 'Please check your password and try again');
+        }  
       };
       var onFail = function(){
         self.set('error', "The user doesn't exist");
       };
-      this.store.find('user', userInfo.username).then(onSuccess, onFail);
+      this.store.find('user', {id: userInfo.username, password: userInfo.password, operation: 'login'}).then(onSuccess, onFail);
     }
   }
 });
