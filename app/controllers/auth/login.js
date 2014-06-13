@@ -16,7 +16,10 @@ var AuthLoginController = Ember.ObjectController.extend({
       }
 
       var self = this;
-      var onSuccess = function(authenticatedUser){
+      var onSuccess = function(response){
+        // console.log(response);
+        // console.log(response.get('firstObject'));
+        var authenticatedUser = response.get('firstObject');
         if(userInfo.password === authenticatedUser.get('password')){
           self.set('session.user', authenticatedUser);
           self.setProperties({
