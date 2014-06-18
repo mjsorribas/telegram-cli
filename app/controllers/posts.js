@@ -27,7 +27,7 @@ var PostsController = Ember.ArrayController.extend({
   logout: function(){
     var self = this;
 
-    $.get('/logout')
+    $.get('/api/logout')
       .done(function(){
         console.log('LOGOUT-Ember-done');
         self.transitionToRoute('auth.login');
