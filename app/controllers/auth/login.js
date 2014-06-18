@@ -16,7 +16,10 @@ var AuthLoginController = Ember.ObjectController.extend({
       }
 
       var self = this;
-      var onSuccess = function(authenticatedUser){
+      var onSuccess = function(response){
+        // console.log(response);
+        // console.log(response.get('firstObject'));
+        var authenticatedUser = response.get('firstObject');
         if(userInfo.password === authenticatedUser.get('password')){
           self.set('session.user', authenticatedUser);
           self.setProperties({
@@ -25,13 +28,15 @@ var AuthLoginController = Ember.ObjectController.extend({
           });
           self.transitionToRoute('posts');
         } else {
+          // console.log('authenticatedUser = '+authenticatedUser);
+          // console.log('userInfo = '+userInfo);
           self.set('error', 'Please check your password and try again');
         }  
       };
       var onFail = function(){
         self.set('error', "The user doesn't exist");
       };
-      this.store.find('user', userInfo.username).then(onSuccess, onFail);
+      this.store.find('user', {id: userInfo.username, password: userInfo.password, operation: 'login'}).then(onSuccess, onFail);
     }
   }
 });

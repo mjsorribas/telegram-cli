@@ -25,7 +25,19 @@ var PostsController = Ember.ArrayController.extend({
     return count;
   }.property('postBody'),
   logout: function(){
-    this.transitionToRoute('auth.login');
+    var self = this;
+
+    $.get('/api/logout')
+      .done(function(){
+        console.log('LOGOUT-Ember-done');
+        self.transitionToRoute('auth.login');
+      })
+      .fail(function(){
+        console.log('LOGOUT-Ember-fail');
+      })
+      .always(function(){
+        console.log('LOGOUT-Ember-always');
+      });
   }
 });
 

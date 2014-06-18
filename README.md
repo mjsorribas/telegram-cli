@@ -6,6 +6,8 @@ Tool: Ember-cli
 Operating System: Virtualbox Ubuntu 64bit
 ```
 
+* Server side repo: [https://github.com/yhagio/telegram-server](https://github.com/yhagio/telegram-server)
+
 User can register/login. <br>
 User is redirected to /posts once registered or logged-in. <br>
 Logged-in user can publish posts. <br>
@@ -36,6 +38,7 @@ Logged-in user can publish posts. <br>
 * HOLD - Refactor: User can logout and redirected to login page (Need to refactor transitionToRoute function since it is duplicated in every page that has nav-bar)
 
 #### Current issue and the point where I got stuck:
+* Replace RESTAdapter: [https://gist.github.com/yhagio/76db435fc0b871f4a7f4](http://emberjs.com/guides/models/connecting-to-an-http-server/) and connect to Express.js
 
 #### Todo: 
 * Setup server side (MongoDB, Node.js)

@@ -8,7 +8,7 @@ export default Ember.Component.extend({
       var yourself = this.get('session.user');
       if(user !== yourself && yourself){
         var followed = this.get('controller').get('user.followedByCurrentUser');
-        if(followed == true){
+        if(followed === true){
           this.get('controller').set('user.followedByCurrentUser', false);
         } else {
           this.get('controller').set('user.followedByCurrentUser', true);
