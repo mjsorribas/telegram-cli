@@ -36,9 +36,12 @@ Logged-in user can publish posts. <br>
 * Edge cases: What if a user has 1 million posts / 1 million followers? [https://gist.github.com/yhagio/a527a79b034bd0cf7c76](https://gist.github.com/yhagio/a527a79b034bd0cf7c76)
 * User can follow another user [https://gist.github.com/yhagio/8ce153dccae24643241a](https://gist.github.com/yhagio/8ce153dccae24643241a)
 * HOLD - Refactor: User can logout and redirected to login page (Need to refactor transitionToRoute function since it is duplicated in every page that has nav-bar)
+* Replace RESTAdapter: [https://gist.github.com/yhagio/76db435fc0b871f4a7f4](http://emberjs.com/guides/models/connecting-to-an-http-server/) and connect to Express.js
 
 #### Current issue and the point where I got stuck:
-* Replace RESTAdapter: [https://gist.github.com/yhagio/76db435fc0b871f4a7f4](http://emberjs.com/guides/models/connecting-to-an-http-server/) and connect to Express.js
+* Check whether the user is authenticated before the Ember application starts. In the application initializer, make a query to the backend to check if user is already authenticated. If yes, the backend sends back a user object which you store into session with [deferReadiness
+](http://emberjs.com/api/classes/Ember.Application.html#method_deferReadiness) and [advanceReadiness
+](http://emberjs.com/api/classes/Ember.Application.html#method_advanceReadiness)
 
 #### Todo: 
 * Setup server side (MongoDB, Node.js)
@@ -46,8 +49,12 @@ Logged-in user can publish posts. <br>
 * Save posts in database
 * User cannot regiser with duplicate username nor email
 * If loggedin, redirect to posts when visiting account managements. 
-[Ember.js Transition](http://emberjs.com/guides/routing/preventing-and-retrying-transitions/) Implement once server is hooked, like this (I guess) and [Ember.js Asynchronous Routing](http://emberjs.com/guides/routing/asynchronous-routing/)
-```js routes/auth/register.js
+* [Ember.js Transition](http://emberjs.com/guides/routing/preventing-and-retrying-transitions/) 
+* Implement once server is hooked, like this (I guess) and 
+* [Ember.js Asynchronous Routing](http://emberjs.com/guides/routing/asynchronous-routing/)
+
+`routes/auth/register.js`
+```
 	beforeModel: function(){
 		if(this.get('session.user')){
 			this.transitionTo('posts');
