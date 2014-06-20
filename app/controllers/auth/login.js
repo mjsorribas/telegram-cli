@@ -17,8 +17,6 @@ var AuthLoginController = Ember.ObjectController.extend({
 
       var self = this;
       var onSuccess = function(response){
-        // console.log(response);
-        // console.log(response.get('firstObject'));
         var authenticatedUser = response.get('firstObject');
         if(userInfo.password === authenticatedUser.get('password')){
           self.set('session.user', authenticatedUser);
@@ -28,8 +26,6 @@ var AuthLoginController = Ember.ObjectController.extend({
           });
           self.transitionToRoute('posts');
         } else {
-          // console.log('authenticatedUser = '+authenticatedUser);
-          // console.log('userInfo = '+userInfo);
           self.set('error', 'Please check your password and try again');
         }  
       };
