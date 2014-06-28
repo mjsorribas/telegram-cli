@@ -14,9 +14,9 @@
       </li>
       {{#if session.isAuthenticated}}
         <li class="userInfoNav">
-          {{#link-to 'user' session.user.id}}
+          {{#link-to 'user' session.user.username}}
             <img {{bind-attr src=session.user.avatar}} alt="profile">
-            <p>{{session.user.id}}</p>
+            <p>{{session.user.username}}</p>
           {{/link-to}}
           <a class="logout"  {{action "logout"}}>Logout</a>
         </li>

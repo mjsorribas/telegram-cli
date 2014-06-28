@@ -41,7 +41,7 @@ Logged-in user can publish posts. <br>
 #### Current issue and the point where I got stuck:
 * Check whether the user is authenticated before the Ember application starts. In the application initializer, make a query to the backend to check if user is already authenticated. If yes, the backend sends back a user object which you store into session with [deferReadiness
 ](http://emberjs.com/api/classes/Ember.Application.html#method_deferReadiness) and [advanceReadiness
-](http://emberjs.com/api/classes/Ember.Application.html#method_advanceReadiness)
+](http://emberjs.com/api/classes/Ember.Application.html#method_advanceReadiness) [Issue Note here](https://gist.github.com/yhagio/9273e958c0a9515f7655)
 
 #### Todo: 
 * Setup server side (MongoDB, Node.js)

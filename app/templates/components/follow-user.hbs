@@ -1,6 +1,6 @@
 <div class="eachPost followRow">
   <div class="postProfilePhoto">
-    {{#link-to 'user' user.id}}
+    {{#link-to 'user' user.username}}
     <img src="" alt="Profile Photo">
     {{!-- <img {{bind-attr src=user.avatar}} alt="Profile Photo"> --}}
     {{/link-to}}
@@ -8,9 +8,9 @@
   <div class="eachPostContent">
     <p class="postAuthor">
       <strong>
-        {{#link-to 'user' user.id}}
+        {{#link-to 'user' user.username}}
           SampleUser
-          {{!-- {{user.id}} --}}
+          {{!-- {{user.username}} --}}
         {{/link-to}}
       </strong>
     </p>
