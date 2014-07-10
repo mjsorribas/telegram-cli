@@ -19,15 +19,6 @@ var ApplicationRoute = Ember.Route.extend({
             console.log('Error');
           }
         });
-
-    // $.get("/api/checkLoggedIn/",
-    //   function(response) {
-    //     console.log(response.user);
-    //     if(response.user){
-    //       var user = route.store.push('user', response.user);
-    //       route.set('session.user', user);
-    //     }
-    //   });
   }
 });
 export default ApplicationRoute;
