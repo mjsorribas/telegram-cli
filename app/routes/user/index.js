@@ -1,7 +1,8 @@
 var UserIndexRoute = Ember.Route.extend({
-  model: function(user) {
+  model: function() {
+  	var user = this.modelFor('user');
     return this.store.find("post", {
-		  user: user.username
+		  user: user.id
 		  // skip: 40,
 		  // limit: 20
 		});
