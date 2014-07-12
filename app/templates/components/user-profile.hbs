@@ -1,7 +1,7 @@
 <div class="profileArea">
   <img class="profileAvatar" {{bind-attr src=user.avatar}} alt="Profile Image">
   <p><strong>{{user.name}}</strong></p>
-  <p class="username">@{{user.id}}</p>
+  <p class="username">@{{user.username}}</p>
   {{#if session.isAuthenticated}}
 	  {{#unless isYou}}
 		  {{#if user.followedByCurrentUser}}
@@ -11,4 +11,4 @@
 		  {{/if}}
 	  {{/unless}}
   {{/if}}
-</div> 
+</div>

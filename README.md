@@ -36,9 +36,12 @@ Logged-in user can publish posts. <br>
 * Edge cases: What if a user has 1 million posts / 1 million followers? [https://gist.github.com/yhagio/a527a79b034bd0cf7c76](https://gist.github.com/yhagio/a527a79b034bd0cf7c76)
 * User can follow another user [https://gist.github.com/yhagio/8ce153dccae24643241a](https://gist.github.com/yhagio/8ce153dccae24643241a)
 * HOLD - Refactor: User can logout and redirected to login page (Need to refactor transitionToRoute function since it is duplicated in every page that has nav-bar)
-
-#### Current issue and the point where I got stuck:
 * Replace RESTAdapter: [https://gist.github.com/yhagio/76db435fc0b871f4a7f4](http://emberjs.com/guides/models/connecting-to-an-http-server/) and connect to Express.js
+* Check whether the user is authenticated before the Ember application starts. Using `beforeModel`, check if user is already authenticated. If yes, the backend sends back a user object which you store into session. Gists: [https://gist.github.com/yhagio/50886e087146fae8fc45](https://gist.github.com/yhagio/50886e087146fae8fc45). Created `applicationRoute` for ajax call the logged-in user.
+* UserPage - show the user's posts [gists](https://gist.github.com/yhagio/d5670c8d7ef4b41be795)
+#### Current issue and the point where I got stuck:
+
+* PostsRoute - show follower's posts (skip/limit)
 
 #### Todo: 
 * Setup server side (MongoDB, Node.js)
@@ -46,8 +49,12 @@ Logged-in user can publish posts. <br>
 * Save posts in database
 * User cannot regiser with duplicate username nor email
 * If loggedin, redirect to posts when visiting account managements. 
-[Ember.js Transition](http://emberjs.com/guides/routing/preventing-and-retrying-transitions/) Implement once server is hooked, like this (I guess) and [Ember.js Asynchronous Routing](http://emberjs.com/guides/routing/asynchronous-routing/)
-```js routes/auth/register.js
+* [Ember.js Transition](http://emberjs.com/guides/routing/preventing-and-retrying-transitions/) 
+* Implement once server is hooked, like this (I guess) and 
+* [Ember.js Asynchronous Routing](http://emberjs.com/guides/routing/asynchronous-routing/)
+
+`routes/auth/register.js`
+```
 	beforeModel: function(){
 		if(this.get('session.user')){
 			this.transitionTo('posts');
@@ -57,11 +64,11 @@ Logged-in user can publish posts. <br>
 * User page (Non loggedin or non following user can see latest 10 posts of a user)
 
 * User can see the followers & followees
-* User can see the followee's posts in '/posts'
+* User can see the following user's posts in '/posts'
 * User can unfollow
 * User can set his/her profile avatar (Upload and save it)
 * User can repost a post from another user
-* Notification of new post from followee
+* Notification of new post from following users
 * User can reset password / sent by email (Need Email service)
 
 

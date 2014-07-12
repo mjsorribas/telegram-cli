@@ -32,7 +32,7 @@ var AuthRegisterController = Ember.ObjectController.extend({
       }
         
       var newUser = this.store.createRecord('user', {
-        id:       userInfo.username,
+        username: userInfo.username,
         name:     userInfo.name,
         email:    userInfo.email,
         password: userInfo.password

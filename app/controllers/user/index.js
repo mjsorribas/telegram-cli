@@ -1,4 +1,4 @@
-var UserIndexController = Ember.ObjectController.extend({
+var UserIndexController = Ember.ArrayController.extend({
   posts: (function() {
     return Ember.ArrayProxy.createWithMixins(Ember.SortableMixin, {
       sortProperties: ['date'],
