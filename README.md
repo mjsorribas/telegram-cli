@@ -38,9 +38,9 @@ Logged-in user can publish posts. <br>
 * HOLD - Refactor: User can logout and redirected to login page (Need to refactor transitionToRoute function since it is duplicated in every page that has nav-bar)
 * Replace RESTAdapter: [https://gist.github.com/yhagio/76db435fc0b871f4a7f4](http://emberjs.com/guides/models/connecting-to-an-http-server/) and connect to Express.js
 * Check whether the user is authenticated before the Ember application starts. Using `beforeModel`, check if user is already authenticated. If yes, the backend sends back a user object which you store into session. Gists: [https://gist.github.com/yhagio/50886e087146fae8fc45](https://gist.github.com/yhagio/50886e087146fae8fc45). Created `applicationRoute` for ajax call the logged-in user.
-
-#### Current issue and the point where I got stuck:
 * UserPage - show the user's posts [gists](https://gist.github.com/yhagio/d5670c8d7ef4b41be795)
+#### Current issue and the point where I got stuck:
+
 * PostsRoute - show follower's posts (skip/limit)
 
 #### Todo: 
