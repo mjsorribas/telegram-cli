@@ -4,6 +4,7 @@ export default Ember.Component.extend({
   }.property('user', 'session.user'),
 
   actions: {
+    // Need to make 'FOLLOW/UNFOLLOW' persistent
     follow: function(user){
       var yourself = this.get('session.user');
       if(user !== yourself && yourself){
@@ -14,6 +15,19 @@ export default Ember.Component.extend({
           this.get('controller').set('user.followedByCurrentUser', true);
         }
       }
+      console.log(user);
+      $.ajax({
+        url: '/api/follow/',
+        type: 'GET',
+        dataType: 'json',
+        data: {user: user.id},
+        success: function(response) {
+          console.log('response: ' + response);
+        },
+        error: function() {
+          console.log('Error');
+        }
+      });
     }
   }
 });

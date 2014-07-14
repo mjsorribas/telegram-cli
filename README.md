@@ -40,7 +40,7 @@ Logged-in user can publish posts. <br>
 * Check whether the user is authenticated before the Ember application starts. Using `beforeModel`, check if user is already authenticated. If yes, the backend sends back a user object which you store into session. Gists: [https://gist.github.com/yhagio/50886e087146fae8fc45](https://gist.github.com/yhagio/50886e087146fae8fc45). Created `applicationRoute` for ajax call the logged-in user.
 * UserPage - show the user's posts [gists](https://gist.github.com/yhagio/d5670c8d7ef4b41be795)
 #### Current issue and the point where I got stuck:
-
+* Follow user [gist](https://gist.github.com/yhagio/214f0a60d4059cd51a08)
 * PostsRoute - show follower's posts (skip/limit)
 
 #### Todo: 
