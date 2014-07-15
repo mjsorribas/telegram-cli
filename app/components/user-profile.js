@@ -15,19 +15,6 @@ export default Ember.Component.extend({
           this.get('controller').set('user.followedByCurrentUser', true);
         }
       }
-      console.log(user);
-      $.ajax({
-        url: '/api/follow/',
-        type: 'GET',
-        dataType: 'json',
-        data: {user: user.id},
-        success: function(response) {
-          console.log('response: ' + response);
-        },
-        error: function() {
-          console.log('Error');
-        }
-      });
     }
   }
 });
