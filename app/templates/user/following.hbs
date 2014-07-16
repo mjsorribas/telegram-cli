@@ -3,6 +3,6 @@
   <h3 class="activePage">Following</h3>
   <h3>{{#link-to "user.followers"}}Followers{{/link-to}}</h3>
 </div>
-{{#each}}
+{{#each user in users}}
 	{{follow-user user=this}}
 {{/each}}

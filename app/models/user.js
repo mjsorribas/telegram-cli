@@ -5,9 +5,9 @@ var User = DS.Model.extend({
   password: DS.attr('string'),
   posts: DS.hasMany('post'),
   avatar: DS.attr('string'),
-  followedByCurrentUser: DS.attr('boolean', {defaultValue: false}),
-  followings: DS.hasMany('user'),
-  followers: DS.hasMany('user')
+  followedByCurrentUser: DS.attr('boolean', {defaultValue: false})
+  // followings: DS.hasMany('user'),
+  // followers: DS.hasMany('user')
 });
 
 export default User;
