@@ -1,19 +1,21 @@
 var UserFollowingRoute = Ember.Route.extend({
+	// Filter users by checking if containing currentURLuser as a follower
 	model: function(){
 		// return this.modelFor('user');
-  	var thisUser = this.modelFor('user');
-  	// return this.store.find('user', {followers: thisUser.id});
-  	console.log("= = = = = = = = =");
+  	var currentURLuser = this.modelFor('user');
+  	// return this.store.find('user', {followers: currentURLuser.id});
+  	// console.log("= = = = = = = = =");
 		return this.store.filter(
 		  "user",
 		  {
-		    followers: thisUser.id
+		    follower: currentURLuser.id
 		    // skip: 40,
 		  	// limit: 20
 		  },
 		  function(user) {
-		  	console.log(user);
-		    return user.get('user') === user;
+		  	return user.get('followedByCurrentUser');
+		  	// console.log(user);
+		   //  return user.get('user') === user;
 		  }
 		);
   }

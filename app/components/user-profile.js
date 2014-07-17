@@ -4,19 +4,16 @@ export default Ember.Component.extend({
   }.property('user', 'session.user'),
 
   actions: {
-    // Need to make 'FOLLOW/UNFOLLOW' persistent
     follow: function(user){
       var yourself = this.get('session.user');
       if(user !== yourself && yourself){
-        var followed = this.get('controller').get('user.followedByCurrentUser');
-        if(followed === true){
+        var isfollowedByCurrentUser = this.get('controller').get('user.followedByCurrentUser');
+        if(isfollowedByCurrentUser){
           this.get('controller').set('user.followedByCurrentUser', false);
         } else {
           this.get('controller').set('user.followedByCurrentUser', true);
         }
       }
-      console.log(" ======== FOLLOW ========");
-      console.log(user);
       $.ajax({
         url: '/api/follow/',
         type: 'GET',
@@ -27,6 +24,29 @@ export default Ember.Component.extend({
         },
         error: function() {
           console.log('Error on Follow');
+        }
+      });
+    },
+    unfollow: function(user){
+      var yourself = this.get('session.user');
+      if(user !== yourself && yourself){
+        var isfollowedByCurrentUser = this.get('controller').get('user.followedByCurrentUser');
+        if(isfollowedByCurrentUser){
+          this.get('controller').set('user.followedByCurrentUser', false);
+        } else {
+          this.get('controller').set('user.followedByCurrentUser', true);
+        }
+      }
+      $.ajax({
+        url: '/api/unfollow/',
+        type: 'GET',
+        dataType: 'json',
+        data: {user: user.id},
+        success: function(response) {
+          console.log(' ==== Unfollow response: ' + response);
+        },
+        error: function() {
+          console.log('Error on Unfollow');
         }
       });
     }
