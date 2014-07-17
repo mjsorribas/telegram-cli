@@ -1,8 +1,7 @@
 <div class="eachPost followRow">
   <div class="postProfilePhoto">
     {{#link-to 'user' user}}
-    <img src="" alt="Profile Photo">
-    <img {{bind-attr src=user.username}} alt="Profile Photo">
+      <img {{bind-attr src=user.username}} alt="Profile Photo">
     {{/link-to}}
   </div>
   <div class="eachPostContent">
