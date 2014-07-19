@@ -4,5 +4,5 @@
   <h3>{{#link-to "user.followers"}}Followers{{/link-to}}</h3>
 </div>
 {{#each user in controller}}
-	{{follow-user user=user}}
+	{{follow-user user=user session=controller.session}}
 {{/each}}

@@ -4,5 +4,5 @@
   <h3 class="activePage">Followers</h3>
 </div>
 {{#each user in controller}}
-	{{follow-user user=user}}
+	{{follow-user user=user session=controller.session}}
 {{/each}}
