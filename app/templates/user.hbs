@@ -1,2 +1,7 @@
 {{user-profile session=controller.session user=model}}
+<div class="latestPostsTitle">
+  {{#link-to "user.index" activeClass="activePage" tagName="h3"}}Posts{{/link-to}}
+  {{#link-to "user.following" activeClass="activePage" tagName="h3"}}Following{{/link-to}}
+  {{#link-to "user.followers" activeClass="activePage" tagName="h3"}}Followers{{/link-to}}
+</div>
 {{outlet}}
