@@ -1,4 +1,18 @@
-{{user-profile session=controller.session user=model}}
+{{!-- {{user-profile session=controller.session user=model}} --}}
+<div class="profileArea">
+  <img class="profileAvatar" {{bind-attr src=model.avatar}} alt="Profile Image">
+  <p><strong>{{model.name}}</strong></p>
+  <p class="username">@{{model.username}}</p>
+  {{#if session.isAuthenticated}}
+	  {{#unless isYou}}
+		  {{#if model.followedByCurrentUser}}
+		  	<button class="followButton" {{action "unfollow" model}}>Unfollow</button>
+		  {{else}}
+				<button class="followButton" {{action "follow" model}}>Follow</button>
+		  {{/if}}
+	  {{/unless}}
+  {{/if}}
+</div>
 <div class="latestPostsTitle">
   {{#link-to "user.index" activeClass="activePage" tagName="h3"}}Posts{{/link-to}}
   {{#link-to "user.following" activeClass="activePage" tagName="h3"}}Following{{/link-to}}

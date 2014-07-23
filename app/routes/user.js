@@ -20,6 +20,59 @@ var UserRoute = Ember.Route.extend({
         console.log('Error');
       }
     });
-  }
+  },
+
+  // actions: {
+  //   follow: function(user){
+  //     // console.log('======== FOLLOW =======');
+  //     // console.log('======== Yourself ===== ' + yourself);
+  //     // console.log('======== user ========= ' + user);
+  //     var yourself = this.get('session.user');
+  //     if(user !== yourself && yourself){
+  //       var isfollowedByCurrentUser = this.get('controller.model.followedByCurrentUser');
+  //       // console.log('======== isfollowedByCurrentUser : ' + isfollowedByCurrentUser);
+  //       if(isfollowedByCurrentUser){
+  //         this.set('controller.model.followedByCurrentUser', false);
+  //       } else {
+  //         this.set('controller.model.followedByCurrentUser', true);
+  //       }
+  //     }
+  //     $.ajax({
+  //       url: '/api/follow/',
+  //       type: 'GET',
+  //       dataType: 'json',
+  //       data: {user: user.id}
+  //       // success: function() {
+  //       //   console.log('Follow sucess');
+  //       // },
+  //       // error: function() {
+  //       //   console.log('Error on Follow');
+  //       // }
+  //     });
+  //   },
+  //   unfollow: function(user){
+  //     var yourself = this.get('session.user');
+  //     if(user !== yourself && yourself){
+  //       var isfollowedByCurrentUser = this.get('controller.model.followedByCurrentUser');
+  //       if(isfollowedByCurrentUser){
+  //         this.set('controller.model.followedByCurrentUser', false);
+  //       } else {
+  //         this.set('controller.model.followedByCurrentUser', true);
+  //       }
+  //     }
+  //     $.ajax({
+  //       url: '/api/unfollow/',
+  //       type: 'GET',
+  //       dataType: 'json',
+  //       data: {user: user.id}
+  //       // success: function() {
+  //       //   console.log('Unfollow sucess');
+  //       // },
+  //       // error: function() {
+  //       //   console.log('Error on Unfollow');
+  //       // }
+  //     });
+  //   }
+  // }
 });
 export default UserRoute;
