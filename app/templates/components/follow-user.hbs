@@ -15,9 +15,9 @@
     {{#if session.isAuthenticated}}
       {{#unless isYou}}
         {{#if user.followedByCurrentUser}}
-          <button class="followButton toRight" {{action "unfollow" user}}>Unfollow</button>
+          <button class="followButton toRight" {{action "followUnfollow" user}}>Unfollow</button>
         {{else}}
-          <button class="followButton toRight" {{action "follow" user}}>Follow</button>
+          <button class="followButton toRight" {{action "followUnfollow" user}}>Follow</button>
         {{/if}}
       {{/unless}}
     {{/if}}
