@@ -49,6 +49,9 @@ Logged-in user can publish posts. <br>
 
 * UserPage - show the user's posts [gists](https://gist.github.com/yhagio/d5670c8d7ef4b41be795)
 
+* If loggedin, redirect to posts when visiting account managements. [commit](https://github.com/yhagio/telegram-cli/commit/9e7809de6a6a5ee56a2902e1c3b596d322ce0a45)
+* Refactor: [commit1](https://github.com/yhagio/telegram-cli/commit/75ac8047cab95e26017909851974cdc785e5705a), [commit2](https://github.com/yhagio/telegram-cli/commit/ac9e0be21b46424ab3a492ef58922a6810a49b10), [commit3](https://github.com/yhagio/telegram-cli/commit/641ca3dcbca9ac04cefb2a5442af5ebc250dcb3c)
+
 #### Current issue and the point where I got stuck:
 * PostsRoute - show follower's posts (skip/limit)
 **FollowUser branch**
@@ -56,21 +59,14 @@ Logged-in user can publish posts. <br>
 * User can see the following user's posts in '/posts'
 * User can see the followers & followees
 
+
 #### Todo: 
 * User cannot regiser with duplicate username nor email
-* If loggedin, redirect to posts when visiting account managements. 
 * [Ember.js Transition](http://emberjs.com/guides/routing/preventing-and-retrying-transitions/) 
 * Implement once server is hooked, like this (I guess) and 
 * [Ember.js Asynchronous Routing](http://emberjs.com/guides/routing/asynchronous-routing/)
 
-`routes/auth/register.js`
-```
-	beforeModel: function(){
-		if(this.get('session.user')){
-			this.transitionTo('posts');
-		}
-	}
-```
+
 * User page (Non loggedin or non following user can see latest 10 posts of a user)
 * User can set his/her profile avatar (Upload and save it)
 * User can repost(retweet) a post from another user

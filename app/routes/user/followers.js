@@ -5,17 +5,11 @@ var UserFollowersRoute = Ember.Route.extend({
   	var currentURLuser = this.modelFor('user');
   	// return this.store.find('user', {followings: currentURLuser.id});
   	// console.log("= = = = = = = = =");
-  	return this.store.filter(
-		  "user",
+  	return this.store.find( "user",
 		  {
-		    followee: currentURLuser.id
+		    followee: currentURLuser.id // currentUserAsFollowee
 		    // skip: 40,
 		  	// limit: 20
-		  },
-		  function(user) {
-		  	return user.get('followingCurrentUser');
-		  	// console.log(user);
-		    // return user.get('user') === user;
 		  }
 		);
   }
