@@ -1,19 +1,25 @@
 <div class="eachPost followRow">
   <div class="postProfilePhoto">
-    {{#link-to 'user' user.username}}
-    <img src="" alt="Profile Photo">
-    {{!-- <img {{bind-attr src=user.avatar}} alt="Profile Photo"> --}}
+    {{#link-to 'user' user}}
+      <img {{bind-attr src=user.avatar}} alt="Profile Photo">
     {{/link-to}}
   </div>
   <div class="eachPostContent">
     <p class="postAuthor">
       <strong>
-        {{#link-to 'user' user.username}}
-          SampleUser
-          {{!-- {{user.username}} --}}
+        {{#link-to 'user' user}}
+          {{user.username}}
         {{/link-to}}
       </strong>
     </p>
-    <button class="followButton toRight">Follow</button>
+    {{#if session.isAuthenticated}}
+      {{#unless isYou}}
+        {{#if user.followedByCurrentUser}}
+          <button class="followButton toRight" {{action "followUnfollow" user}}>Unfollow</button>
+        {{else}}
+          <button class="followButton toRight" {{action "followUnfollow" user}}>Follow</button>
+        {{/if}}
+      {{/unless}}
+    {{/if}}
   </div>
 </div>

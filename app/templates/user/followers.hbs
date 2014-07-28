@@ -1,6 +1,3 @@
-<div class="latestPostsTitle">
-  <h3>{{#link-to "user.index"}}Posts{{/link-to}}</h3>
-  <h3>{{#link-to "user.following"}}Following{{/link-to}}</h3>
-  <h3 class="activePage">Followers</h3>
-</div>
-{{follow-user user=model}}
+{{#each user in followers}}
+	{{follow-user user=user session=controller.session action="followUnfollow" param=user}}
+{{/each}}

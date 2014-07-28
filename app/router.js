@@ -17,6 +17,8 @@ Router.map(function() {
       this.route('followers');
     });
   });
+
+  this.route('bad', {path: '/*bad'});
 });
 
 export default Router;

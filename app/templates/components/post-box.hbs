@@ -1,13 +1,13 @@
 <div class="eachPost">
   <div class="postProfilePhoto">
-    {{#link-to 'user' post.user.username}}
+    {{#link-to 'user' post.user}}
     <img {{bind-attr src=post.user.avatar}} alt="Profile Photo">
     {{/link-to}}
   </div>
   <div class="eachPostContent">
     <p class="postAuthor">
       <strong>
-        {{#link-to 'user' post.user.username}}
+        {{#link-to 'user' post.user}}
           {{post.user.username}}
         {{/link-to}}
       </strong>

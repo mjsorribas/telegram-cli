@@ -422,6 +422,9 @@ img.postmark {
   box-shadow: 0 2px 0 #0084B2;
   color: #AAA;
 }
+.latestPostsTitle h3:hover{
+  cursor: pointer;
+}
 
 /* Following */
 .followRow{
