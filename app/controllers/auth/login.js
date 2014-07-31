@@ -1,3 +1,7 @@
+function cryptPassword(password){
+  return $.md5(password);
+}
+
 var AuthLoginController = Ember.ObjectController.extend({
   username: null,
   password: null,
@@ -42,7 +46,7 @@ var AuthLoginController = Ember.ObjectController.extend({
       };
       this.store.find('user', {
         username: userInfo.username, 
-        password: userInfo.password, 
+        password: cryptPassword(userInfo.password), 
         operation: 'login'})
       .then(onSuccess, onFail);
     }
