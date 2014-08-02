@@ -30,7 +30,13 @@ var AuthResetpasswordController = Ember.ObjectController.extend({
       var onFail = function(){
         self.set('error', "The user doesn't exist");
       };
-      this.store.find('user', userInfo.username).then(onSuccess, onFail);
+      this.store.find(
+        'user', {
+          username: userInfo.username, 
+          email:     userInfo.email,
+          operation: 'resetPassword'
+        }
+      ).then(onSuccess, onFail);
     }
   }
 
