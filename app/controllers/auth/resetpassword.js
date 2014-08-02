@@ -17,7 +17,8 @@ var AuthResetpasswordController = Ember.ObjectController.extend({
 
       var self = this;
       var onSuccess = function(registeredUser){
-        if(userInfo.email === registeredUser.get('email')){
+        console.log(registeredUser);
+        if(userInfo.email === registeredUser.get('firstObject.email')){
           self.setProperties({
             'username': '',
             'email': ''

@@ -27,19 +27,7 @@ var AuthLoginController = Ember.ObjectController.extend({
           'username': '',
           'password': ''
         });
-        self.transitionToRoute('posts');
-
-        // var authenticatedUser = response.get('firstObject');
-        // if(userInfo.password === authenticatedUser.get('password')){
-        //   self.set('session.user', authenticatedUser);
-        //   self.setProperties({
-        //     'username': '',
-        //     'password': ''
-        //   });
-        //   self.transitionToRoute('posts');
-        // } else {
-        //   self.set('error', 'Please check your password and try again');
-        // }  
+        self.transitionToRoute('posts');  
       };
       var onFail = function(){
         self.set('error', "The user doesn't exist");
