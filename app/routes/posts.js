@@ -5,7 +5,7 @@ var PostsRoute = Ember.Route.extend({
     }
   },
   model: function(){
-    return this.store.find('post');
+    return this.store.find('post', {followeesOf: this.get('session.user.id')});
   }
 });
 export default PostsRoute;
