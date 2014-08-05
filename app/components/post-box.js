@@ -17,8 +17,10 @@ export default Ember.Component.extend({
     return this.get('isAuthor') && this.get('isMouseOver');
   }.property('isAuthor', 'isMouseOver'),
 
+  isDeleted: false,
   actions: {
     removePost: function(post){
+      post.set('isDeleted', true);
       post.deleteRecord();
       post.save();
     }

@@ -3,6 +3,25 @@ var PostsController = Ember.ArrayController.extend({
   sortAscending: false,
   body: null,
   postBody: '',
+  posts: function(){
+    var posts = [];
+    console.log('====== Update deleted posts ====');
+    var that = this;
+    this.forEach(function(post) {
+      posts.push(post);
+      if(post.get('isDeleted')){
+        if(posts.indexOf(post) >= 0){
+          posts.splice(posts.indexOf(post), 1);
+        }
+      } else {
+        if(posts.indexOf(post) < 0){
+          posts.push(post);
+        }
+      }
+    });
+    console.log(posts);
+    return posts;
+  }.property('@each.isDeleted', '@each'),
   actions:{
     publishPost: function(){
       var self = this;

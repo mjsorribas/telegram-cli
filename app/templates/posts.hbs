@@ -13,8 +13,8 @@
     <div class="latestPostsTitle">
       <h3>Latest Posts</h3>
     </div>
-    {{#each}}
-      {{post-box　user=controller.session.user post=this}}
+    {{#each post in posts}}
+      {{post-box　user=controller.session.user post=post}}
     {{/each}}
   </div>
 </div>
