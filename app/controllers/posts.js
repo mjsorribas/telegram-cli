@@ -6,7 +6,7 @@ var PostsController = Ember.ArrayController.extend({
   posts: function(){
     var posts = [];
     console.log('====== Update deleted posts ====');
-    var that = this;
+    // var that = this;
     this.forEach(function(post) {
       posts.push(post);
       if(post.get('isDeleted')){
@@ -21,9 +21,10 @@ var PostsController = Ember.ArrayController.extend({
     });
     console.log(posts);
     return posts;
-  }.property('@each.isDeleted', '@each'),
+  }.property('@each.isDeleted', '@each', 'this._subControllers.length'),
   actions:{
     publishPost: function(){
+
       var self = this;
       var body = this.get('postBody');
       if(body){
@@ -34,6 +35,7 @@ var PostsController = Ember.ArrayController.extend({
         });
         post.save().then(function(){
           self.set('postBody', '');
+          return post;
         });
       } 
     }
