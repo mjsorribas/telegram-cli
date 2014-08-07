@@ -5,6 +5,9 @@ function isValidEmail(email){
 function isValidPassword(password){
   return password.length >= 6;
 }
+function cryptPassword(password){
+  return $.md5(password);
+}
 
 var AuthRegisterController = Ember.ObjectController.extend({
   name:     null,
@@ -30,12 +33,12 @@ var AuthRegisterController = Ember.ObjectController.extend({
       if(!isValidPassword(userInfo.password)){
         return this.set('error', 'Password must be at least 6 characters');
       }
-        
+      
       var newUser = this.store.createRecord('user', {
         username: userInfo.username,
         name:     userInfo.name,
         email:    userInfo.email,
-        password: userInfo.password
+        password: cryptPassword(userInfo.password)
       });
 
       var self = this;
