@@ -63,6 +63,7 @@ Logged-in user can publish posts. <br>
 * fixed some issues for displaying posts above [commits here](https://gist.github.com/yhagio/9224cccb652a9a106096)
 * User can reset password / sent by email (Mailgun) [Commits](https://gist.github.com/yhagio/9c6ac9f185bea1dca5b8)
 * Securing password: [commits](https://gist.github.com/yhagio/4eb3ee7309231cdd4017)
+* Update posts on deleting a post, on publishing, and modified sorting posts [gists](https://gist.github.com/yhagio/d71d881bf48c5dd88619)
 
 #### Current issue and the point where I got stuck:
 * WIP: PostsRoute - show follower's posts (skip/limit)
