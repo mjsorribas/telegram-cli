@@ -1,6 +1,6 @@
 var PostsController = Ember.ArrayController.extend({
-  sortProperties: ['date'],
-  sortAscending: false,
+  // sortProperties: ['date'],
+  // sortAscending: false,
   body: null,
   postBody: '',
   posts: function(){
@@ -25,8 +25,12 @@ var PostsController = Ember.ArrayController.extend({
         posts.push(post);
       }
     });
-    
-    return posts;
+
+    return Ember.ArrayController.create({
+      content: posts, 
+      sortProperties: ['date'], 
+      sortAscending: false
+    });
   }.property('@each', '@each.isDeleted', 'newPosts.[]'),
   actions:{
     publishPost: function(){

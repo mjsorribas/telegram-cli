@@ -14,7 +14,7 @@ var PostsRoute = Ember.Route.extend({
     var that = this;
     controller.set('newPosts', this.store.filter('post', 
     	function(post) { 
-    		return post.get('user') == that.get('session.user'); 
+    		return post.get('user') === that.get('session.user'); 
   		}
   	));
   }
