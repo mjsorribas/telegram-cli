@@ -14,7 +14,7 @@
       <h3>Latest Posts</h3>
     </div>
     {{#each post in posts}}
-      {{post-box　user=controller.session.user post=post}}
+      {{post-box　user=controller.session.user post=post session=controller.session action="yesRepost" param=post}}
     {{/each}}
   </div>
 </div>

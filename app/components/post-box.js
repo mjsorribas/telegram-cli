@@ -23,6 +23,19 @@ export default Ember.Component.extend({
       post.set('isDeleted', true);
       post.deleteRecord();
       post.save();
+    },
+
+    showModal: function(){
+      this.set('confirmRepost', true);
+    },
+
+    yesRepost: function(){
+      console.log(this.get('param'));
+      this.sendAction('action', this.get('param'));
+    },
+
+    noRepost: function(){
+      this.set('confirmRepost', false);
     }
   }
 });

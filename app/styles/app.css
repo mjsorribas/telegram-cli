@@ -97,6 +97,14 @@ ul li.brand > a,
   color: #AAA;
 }
 
+div.confirmBox{
+  background-color: #ddd;
+}
+
+.repostedBy {
+  color: #888;
+}
+
 /* Font related 
 ======================================== */
 .get-going {
@@ -115,7 +123,8 @@ span.or,
   font-weight: bold;
 }
 
-.publish-button{
+.publish-button,
+.repostedBy {
   font-size: 14px;
 }
 
@@ -394,6 +403,27 @@ img.postmark {
 .deletePost {
   display: inline-block;
   margin-left: 10px;
+}
+
+.postProfilePhoto.confirmImg{
+  height: 60px;
+  vertical-align: middle;
+}
+
+.deletePost.yesNo {
+  margin: 5px 10px 0 0;
+}
+
+.eachPost > .repostHead {
+  margin-left: 9.3%;
+}
+
+.repostHead > img {
+  height: 20px;
+}
+
+.reposted {
+  margin-left: 5px;
 }
 
 /* =========================

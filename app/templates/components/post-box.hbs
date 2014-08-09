@@ -1,21 +1,76 @@
-<div class="eachPost">
-  <div class="postProfilePhoto">
-    {{#link-to 'user' post.user}}
-    <img {{bind-attr src=post.user.avatar}} alt="Profile Photo">
-    {{/link-to}}
-  </div>
-  <div class="eachPostContent">
-    <p class="postAuthor">
-      <strong>
+{{#if post.originalAuthor}}
+  <div class="eachPost">
+    <div class="repostHead">
+      <img src="images/icon-repost.png" alt="Repost Icon">
+      <span>
+        <span class="repostedBy">Reposted by</span> 
         {{#link-to 'user' post.user}}
           {{post.user.username}}
         {{/link-to}}
-      </strong>
-    </p>
-    <p class="postContent">{{post.body}}</p>
-    <span class="timePosted"><em>{{format-date post.date}}</em></span>
-      {{#if showDeleteButton}}
-        <a class="deletePost" {{action "removePost" post}}>Delete</a>
-      {{/if}}
+      </span>
+    </div>
+    <div class="postProfilePhoto">
+      {{#link-to 'user' post.user}}
+      <img {{bind-attr src=post.user.avatar}} alt="Profile Photo">
+      {{/link-to}}
+    </div>
+    <div class="eachPostContent">
+      <p class="postAuthor">
+        <strong>
+          {{#link-to 'user' post.user}}
+            {{post.originalAuthor.username}}
+          {{/link-to}}
+        </strong>
+      </p>
+      <p class="postContent">{{post.body}}</p>
+      <span class="timePosted"><em>{{format-date post.date}}</em></span>
+        <span class="reposted">Reposted</span> 
+        {{#if showDeleteButton}}
+          <a class="deletePost" {{action "removePost" post}}>Delete</a>
+        {{/if}}
+    </div>
   </div>
-</div>
+{{else}}
+  <div class="eachPost">
+    <div class="postProfilePhoto">
+      {{#link-to 'user' post.user}}
+      <img {{bind-attr src=post.user.avatar}} alt="Profile Photo">
+      {{/link-to}}
+    </div>
+    <div class="eachPostContent">
+      <p class="postAuthor">
+        <strong>
+          {{#link-to 'user' post.user}}
+            {{post.user.username}}
+          {{/link-to}}
+        </strong>
+      </p>
+      <p class="postContent">{{post.body}}</p>
+      <span class="timePosted"><em>{{format-date post.date}}</em></span>
+        {{#if session.isAuthenticated}}
+          {{#unless isAuthor}}
+            <a class="deletePost" {{action "showModal" }}>Repost</a>
+          {{/unless}}
+        {{/if}}
+        {{#if showDeleteButton}}
+          <a class="deletePost" {{action "removePost" post}}>Delete</a>
+        {{/if}}
+    </div>
+  </div>
+{{/if}}
+{{#if confirmRepost}}
+  <div class="eachPost confirmBox">
+    <div class="postProfilePhoto confirmImg">
+      <img src="images/icon-repost.png" alt="Repost Icon">
+    </div>
+    <div class="eachPostContent">
+      <p class="postAuthor">
+        <strong>
+          Repost this to your followers?
+        </strong>
+      </p>
+      <a class="deletePost yesNo" {{action "yesRepost" post}}>Yes</a>
+      <a class="deletePost yesNo" {{action "noRepost"}}>No</a>
+    </div>
+  </div>
+{{/if}}

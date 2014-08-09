@@ -17,6 +17,27 @@ var PostsRoute = Ember.Route.extend({
     		return post.get('user') === that.get('session.user'); 
   		}
   	));
+  },
+  actions: {
+    yesRepost: function(post){
+      // console.log("yes reposting");
+      // console.log(post);
+      var self = this;
+      var authenticatedUser = this.get('session.user');
+      // console.log('body '+post.get('body'));
+      // console.log('user '+post.get('user'));
+      // console.log('auser '+authenticatedUser);
+      var newPost = this.store.createRecord('post',{
+        body: post.get('body'),
+        user: authenticatedUser,//post.get('user'),
+        originalAuthor: post.get('user'),
+        date: new Date()
+      });
+      newPost.save().then(function(){
+        self.set('confirmRepost', false);
+        return newPost;
+      });
+    }
   }
 });
 export default PostsRoute;
