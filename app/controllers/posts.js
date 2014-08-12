@@ -49,6 +49,22 @@ var PostsController = Ember.ArrayController.extend({
         });
       } 
     }
+    // yesRepost: function(post){
+    //   console.log("yes reposting");
+    //   console.log(post);
+    //   var self = this;
+    //   var authenticatedUser = this.get('session.user.id');
+    //   var newPost = this.store.createRecord('post',{
+    //     body: post.get('body'),
+    //     user: post.get('user'),
+    //     repostedBy: authenticatedUser,
+    //     date: new Date()
+    //   });
+    //   newPost.save().then(function(){
+    //     self.set('confirmRepost', false);
+    //     return newPost;
+    //   });
+    // }
   },
   charCount: function(){
     var charCount = this.get('postBody').length || 0;
