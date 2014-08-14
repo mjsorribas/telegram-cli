@@ -1,24 +1,11 @@
 export default {
   name: 'session',
   initialize: function(container, app){
-        
-    // var userObj;
-    // app.deferReadiness();
-    // $.get("/api/users/", function(response) {
-    //   userObj = response.get('user');
-    //   app.advanceReadiness();
-    // }); 
-
-    // var Session = Ember.Object.extend({
-    //   user: null, 
-    //   isAuthenticated: function(){
-    //     return userObj != null;
-    //   }.property('user')
-    // });
-    
     var Session = Ember.Object.extend({
       user: null, 
       isAuthenticated: function(){
+        Ember.Logger.debug('initialize fn - isAuthenticated fn ?');
+        Ember.Logger.debug(this.get('user') != null);
         return this.get('user') != null;
       }.property('user')
     });

@@ -1,6 +1,4 @@
 var PostsController = Ember.ArrayController.extend({
-  // sortProperties: ['date'],
-  // sortAscending: false,
   body: null,
   postBody: '',
   posts: function(){
@@ -9,12 +7,13 @@ var PostsController = Ember.ArrayController.extend({
 
     this.forEach(function(post) {
       if(post.get('isDeleted')){
-        console.log(post.get('user'));
         if(posts.indexOf(post) >= 0){
+          Ember.Logger.debug('Post to be removed: ', post);
           posts.splice(posts.indexOf(post), 1);
         }
       } else {
         if(posts.indexOf(post) < 0){
+          Ember.Logger.debug('Post to be added: ', post);
           posts.push(post);
         }
       }
@@ -22,6 +21,7 @@ var PostsController = Ember.ArrayController.extend({
 
     ownPosts.forEach(function(post){
       if(posts.indexOf(post) < 0){
+        Ember.Logger.debug('Post to be added: ', post);
         posts.push(post);
       }
     });
@@ -34,10 +34,10 @@ var PostsController = Ember.ArrayController.extend({
   }.property('@each', '@each.isDeleted', 'newPosts.[]'),
   actions:{
     publishPost: function(){
-
       var self = this;
       var body = this.get('postBody');
       if(body){
+        Ember.Logger.debug('post body: ', body);
         var post = this.store.createRecord('post',{
           body: body,
           user: this.get('session.user'),
@@ -45,26 +45,11 @@ var PostsController = Ember.ArrayController.extend({
         });
         post.save().then(function(){
           self.set('postBody', '');
+          Ember.Logger.debug('Published and saved the post: ', post);
           return post;
         });
       } 
     }
-    // yesRepost: function(post){
-    //   console.log("yes reposting");
-    //   console.log(post);
-    //   var self = this;
-    //   var authenticatedUser = this.get('session.user.id');
-    //   var newPost = this.store.createRecord('post',{
-    //     body: post.get('body'),
-    //     user: post.get('user'),
-    //     repostedBy: authenticatedUser,
-    //     date: new Date()
-    //   });
-    //   newPost.save().then(function(){
-    //     self.set('confirmRepost', false);
-    //     return newPost;
-    //   });
-    // }
   },
   charCount: function(){
     var charCount = this.get('postBody').length || 0;
@@ -76,14 +61,14 @@ var PostsController = Ember.ArrayController.extend({
 
     $.get('/api/logout')
       .done(function(){
-        console.log('LOGOUT-Ember-done');
+        Ember.Logger.debug('LOGOUT-Ember-done');
         self.transitionToRoute('auth.login');
       })
       .fail(function(){
-        console.log('LOGOUT-Ember-fail');
+        Ember.Logger.error('LOGOUT-Ember-fail');
       })
       .always(function(){
-        console.log('LOGOUT-Ember-always');
+        Ember.Logger.debug('LOGOUT-Ember-always');
       });
   }
 });

@@ -17,7 +17,7 @@ var AuthResetpasswordController = Ember.ObjectController.extend({
 
       var self = this;
       var onSuccess = function(registeredUser){
-        console.log(registeredUser);
+        Ember.Logger.debug('Successfully sent a new password to user: ', registeredUser);
         if(userInfo.email === registeredUser.get('firstObject.email')){
           self.setProperties({
             'username': '',
@@ -25,10 +25,12 @@ var AuthResetpasswordController = Ember.ObjectController.extend({
           });
           self.transitionToRoute('auth.sentpassnotify');
         } else {
+          Ember.Logger.error('Error on finding email to send a new password');
           self.set('error', 'Check your email and try again');
         }
       };
       var onFail = function(){
+        Ember.Logger.error('Failed to send a new password');
         self.set('error', "Something went wrong ... Try again");
       };
       this.store.find(

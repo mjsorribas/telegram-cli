@@ -1,7 +1,6 @@
 var UserIndexRoute = Ember.Route.extend({
   model: function() {
   	var user = this.modelFor('user');
-    // http://stackoverflow.com/questions/20957870/deleterecord-in-findall-vs-findquery
 		return this.store.filter(
 		  "post",
 		  {

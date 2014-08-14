@@ -8,9 +8,7 @@ var PostsRoute = Ember.Route.extend({
     return this.store.find('post', {followeesOf: this.get('session.user.id')});
   },
   setupController: function (controller, model) {
-    // Call _super for default behavior
     this._super(controller, model);
-    // Implement your custom setup after
     var that = this;
     controller.set('newPosts', this.store.filter('post', 
     	function(post) { 
@@ -20,16 +18,15 @@ var PostsRoute = Ember.Route.extend({
   },
   actions: {
     yesRepost: function(post){
-      // console.log("yes reposting");
-      // console.log(post);
+      Ember.Logger.debug("Reposting of the post: ", post);
       var self = this;
       var authenticatedUser = this.get('session.user');
-      // console.log('body '+post.get('body'));
-      // console.log('user '+post.get('user'));
-      // console.log('auser '+authenticatedUser);
+      Ember.Logger.debug('body of the post: ', post.get('body'));
+      Ember.Logger.debug('user of the post: ', post.get('user'));
+      Ember.Logger.debug('authenticated user: ', authenticatedUser);
       var newPost = this.store.createRecord('post',{
         body: post.get('body'),
-        user: authenticatedUser,//post.get('user'),
+        user: authenticatedUser,
         originalAuthor: post.get('user'),
         date: new Date()
       });

@@ -5,12 +5,14 @@ var UserFollowersController = Ember.ArrayController.extend({
 		var followee 					= this.get('followee'),
 				authenticatedUser = this.get('session.user'),
 				users = [];
-		// Update the followers list of the user whom authenticatedUser is visisting now
+
 		if(followee.get('followedByCurrentUser')){
+
 			this.forEach(function(object) {
 				users.push(object);
 			});
-			if(users.indexOf(authenticatedUser) < 0){
+			if(users.indexOf(authenticatedUser) < 0 ){//&& followee === authenticatedUser
+				Ember.Logger.debug('I just started to follow');
 				users.push(authenticatedUser);
 			}
 			return users;
@@ -18,7 +20,8 @@ var UserFollowersController = Ember.ArrayController.extend({
 			this.forEach(function(object) {
 				users.push(object);
 			});
-			if(users.indexOf(authenticatedUser) >= 0){
+			if(users.indexOf(authenticatedUser) >= 0 && followee === authenticatedUser){
+				Ember.Logger.debug('I just stopped to follow');
 				users.splice(users.indexOf(authenticatedUser), 1);
 			}
 			return users;

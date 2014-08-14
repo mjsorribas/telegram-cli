@@ -5,6 +5,9 @@ html, body{
   background-color: #008CB8;
   padding:0;
   height: 100%;
+  max-width: 1280px;
+  min-width: 690px;
+  margin: auto;
 }
 
 body.ember-application {
@@ -249,7 +252,8 @@ img.postmark {
   top: 0;
   height: 50px;
   width: 100%;
-  margin: 0;
+  min-width: 690px;
+  margin: auto;
   -webkit-box-shadow: 0 1px 1px  #DDD;
      -moz-box-shadow: 0 1px 1px  #DDD;
           box-shadow: 0 1px 1px  #DDD;
@@ -307,6 +311,7 @@ img.postmark {
   width: 100%;
   margin-top: 50px;
   padding-top:20px;
+  padding-bottom: 50px;
 }
 
 .innerPostsContent {
@@ -394,6 +399,7 @@ img.postmark {
 .postContent {
   margin-top: 5px;
   margin-bottom: 7px;
+  word-wrap: break-word;
 }
 
 .timePosted {
