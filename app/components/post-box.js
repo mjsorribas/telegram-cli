@@ -30,7 +30,7 @@ export default Ember.Component.extend({
     },
 
     yesRepost: function(){
-      console.log(this.get('param'));
+      Ember.Logger.debug('The post of repost (param): ', this.get('param'));
       this.sendAction('action', this.get('param'));
     },
 

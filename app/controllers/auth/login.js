@@ -22,6 +22,7 @@ var AuthLoginController = Ember.ObjectController.extend({
       var self = this;
       var onSuccess = function(response){
         var authenticatedUser = response.get('firstObject');
+        Ember.Logger.debug('Successfully logged in as: ', authenticatedUser);
         self.set('session.user', authenticatedUser);
         self.setProperties({
           'username': '',
@@ -30,6 +31,7 @@ var AuthLoginController = Ember.ObjectController.extend({
         self.transitionToRoute('posts');  
       };
       var onFail = function(){
+        Ember.Logger.error('Failed login');
         self.set('error', "The user doesn't exist");
       };
       this.store.find('user', {

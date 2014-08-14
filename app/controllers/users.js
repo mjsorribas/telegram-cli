@@ -5,14 +5,14 @@ var UsersController = Ember.ArrayController.extend({
 
 	    $.get('/api/logout')
 	      .done(function(){
-	        console.log('LOGOUT-Ember-done');
+	        Ember.Logger.debug('LOGOUT-Ember-done');
 	        self.transitionToRoute('auth.login');
 	      })
 	      .fail(function(){
-	        console.log('LOGOUT-Ember-fail');
+	        Ember.Logger.error('LOGOUT-Ember-fail');
 	      })
 	      .always(function(){
-	        console.log('LOGOUT-Ember-always');
+	        Ember.Logger.debug('LOGOUT-Ember-always');
 	      });
   	}
   }

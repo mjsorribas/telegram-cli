@@ -54,7 +54,6 @@ Logged-in user can publish posts. <br>
 
 **FollowUser branch**
 * Follow user, followings, followers - [gist](https://gist.github.com/yhagio/214f0a60d4059cd51a08)
-
 * User can see the followers & followees
 * User can see the following user's posts + own posts in '/posts'
 * Posts displaying issues fixed: [commits here](https://gist.github.com/yhagio/9224cccb652a9a106096)
@@ -65,19 +64,12 @@ Logged-in user can publish posts. <br>
 * Securing password: [commits](https://gist.github.com/yhagio/4eb3ee7309231cdd4017)
 * Update posts on deleting a post, on publishing, and modified sorting posts [gists](https://gist.github.com/yhagio/d71d881bf48c5dd88619)
 
-#### Current issue and the point where I got stuck:
-* WIP: PostsRoute - show follower's posts (skip/limit)
+**retweet**
+* * User can repost(retweet) a post from another user [gists](https://gist.github.com/yhagio/db981b7853d6d02477a1)
 
-#### Todo: 
-* User cannot regiser with duplicate username nor email
-* [Ember.js Transition](http://emberjs.com/guides/routing/preventing-and-retrying-transitions/) 
-* Implement once server is hooked, like this (I guess) and 
-* [Ember.js Asynchronous Routing](http://emberjs.com/guides/routing/asynchronous-routing/)
 
-* User can set his/her profile avatar (Upload and save it)
-* User can repost(retweet) a post from another user
-* Notification of new post from following users
 
 #### Additional 
-
+* User can set his/her profile avatar (Upload and save it)
+* Notification of new post from following users
 * Private message
