@@ -28,7 +28,7 @@ var UserFollowersController = Ember.ArrayController.extend({
         users.push(object);
       });
 
-      if(users.indexOf(authUser) >= 0 && followee === authUser){
+      if(users.indexOf(authUser) >= 0){
         Ember.Logger.debug('I just stopped to follow');
 
         users.splice(users.indexOf(authUser), 1);
