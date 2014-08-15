@@ -1,5 +1,5 @@
 var UserIndexController = Ember.ArrayController.extend({
-	sortProperties: ['date'],
+  sortProperties: ['date'],
   sortAscending: false
 });
 

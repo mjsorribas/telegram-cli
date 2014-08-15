@@ -9,7 +9,9 @@ var AuthLoginController = Ember.ObjectController.extend({
 
   actions: {
     login: function(){
+
       this.set('error', null);
+
       var userInfo = this.getProperties('username', 'password');
 
       if(!userInfo.username){
@@ -19,21 +21,28 @@ var AuthLoginController = Ember.ObjectController.extend({
         return this.set('error', 'Please enter your password');
       }
 
-      var self = this;
+      var _this = this;
+
       var onSuccess = function(response){
-        var authenticatedUser = response.get('firstObject');
-        Ember.Logger.debug('Successfully logged in as: ', authenticatedUser);
-        self.set('session.user', authenticatedUser);
-        self.setProperties({
+        var authUser = response.get('firstObject');
+
+        Ember.Logger.debug('Successfully logged in as: ', authUser);
+
+        _this.set('session.user', authUser);
+        
+        _this.setProperties({
           'username': '',
           'password': ''
         });
-        self.transitionToRoute('posts');  
+
+        _this.transitionToRoute('posts');  
       };
+
       var onFail = function(){
         Ember.Logger.error('Failed login');
-        self.set('error', "The user doesn't exist");
+        _this.set('error', "The user doesn't exist");
       };
+
       this.store.find('user', {
         username: userInfo.username, 
         password: cryptPassword(userInfo.password), 

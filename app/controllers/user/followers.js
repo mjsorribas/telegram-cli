@@ -1,31 +1,43 @@
 var UserFollowersController = Ember.ArrayController.extend({
-	needs: 'user',
-	followee: Ember.computed.alias('controllers.user.model'),
-	followers: function(){
-		var followee 					= this.get('followee'),
-				authenticatedUser = this.get('session.user'),
-				users = [];
+  needs: 'user',
+  followee: Ember.computed.alias('controllers.user.model'),
 
-		if(followee.get('followedByCurrentUser')){
+  followers: function(){
+    
+    var users    = [],
+        followee = this.get('followee'),
+        authUser = this.get('session.user');
 
-			this.forEach(function(object) {
-				users.push(object);
-			});
-			if(users.indexOf(authenticatedUser) < 0 ){//&& followee === authenticatedUser
-				Ember.Logger.debug('I just started to follow');
-				users.push(authenticatedUser);
-			}
-			return users;
-		} else {
-			this.forEach(function(object) {
-				users.push(object);
-			});
-			if(users.indexOf(authenticatedUser) >= 0 && followee === authenticatedUser){
-				Ember.Logger.debug('I just stopped to follow');
-				users.splice(users.indexOf(authenticatedUser), 1);
-			}
-			return users;
-		}
+    if(followee.get('followedByCurrentUser')){
+
+      this.forEach(function(object) {
+        users.push(object);
+      });
+
+      if(users.indexOf(authUser) < 0 ){
+        Ember.Logger.debug('I just started to follow');
+
+        users.push(authUser);
+      }
+
+      return users;
+
+    } else {
+
+      this.forEach(function(object) {
+        users.push(object);
+      });
+
+      if(users.indexOf(authUser) >= 0 && followee === authUser){
+        Ember.Logger.debug('I just stopped to follow');
+
+        users.splice(users.indexOf(authUser), 1);
+      }
+
+      return users;
+    }
+
   }.property('followee.followedByCurrentUser', '@each')
 });
+
 export default UserFollowersController;
