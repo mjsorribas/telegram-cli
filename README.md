@@ -69,6 +69,7 @@ Logged-in user can publish posts. <br>
 
 **refactor**
 * Refactored, CSS fixed, followership fixed, Ember.logger [gists](https://gist.github.com/yhagio/b1bf3cda0da0b707ca24)
+* User registration restriction (No duplicate username & email) [commit](https://github.com/yhagio/telegram-cli/commit/66196c0c06e4f9931301d29f3b1ef9ceea64ef0d)
 
 
 #### Additional 
