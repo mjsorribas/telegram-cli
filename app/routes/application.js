@@ -13,7 +13,7 @@ var ApplicationRoute = Ember.Route.extend({
     };
 
     var onFail = function(){
-      Ember.Logger.error('beforeModel failed login');
+      Ember.Logger.debug('beforeModel Not logged-in yet / failed to login');
       _this.set('error', "The user doesn't exist");
     };
 
