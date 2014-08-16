@@ -1,0 +1,58 @@
+.home-box,
+.postsContainer,
+.postsHeader,
+.publish-button,
+.login-button,
+.followButton,
+.logout {
+  background-color: #fff;
+}
+
+.get-going,
+.username-password {
+  color: #000000;
+}
+
+.input-border {
+  color: #EEEEEE
+}
+
+a,
+.login-button,
+.publish-button,
+.recover-pass,
+.followButton,
+.latestPostsTitle h3 {
+  color: #0084B2;
+}
+
+
+/* Placeholder font color */
+input.username-password::-webkit-input-placeholder{
+  color:#000;
+}
+input.username-password:-moz-placeholder{
+  color:#000;
+}
+input.username-password::-moz-placeholder{
+  color:#000;
+}
+input.username-password:-ms-input-placeholder{
+  color:#000;
+}
+
+/* Posts apge */
+ul li.brand > a,
+.userInfoNav > a,
+.latestPostsTitle h3,
+.username {
+  color: #AAA;
+}
+
+div.confirmBox{
+  background-color: #ddd;
+}
+
+.repostedBy {
+  color: #888;
+}

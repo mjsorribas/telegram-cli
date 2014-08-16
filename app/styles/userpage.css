@@ -1,0 +1,46 @@
+.profileArea{
+  text-align: center;
+}
+.profileAvatar{
+  height: 80px;
+  width: 80px;
+  margin-bottom: 10px;
+}
+.profileArea > p{
+  margin:0;
+}
+.username{
+  margin-top:5px;
+}
+.followButton{
+  margin-top: 10px;
+  padding: 6px 10px;
+  border-radius: 15px;
+  border: 1px solid #0084B2;
+}
+
+.latestPostsTitle h3{
+  display: inline-block;
+  margin: 0 15px;
+  margin-top: 13px;
+  color: #0084B2;
+  height: 70%;
+}
+
+.latestPostsTitle h3.activePage{
+  box-shadow: 0 2px 0 #0084B2;
+  color: #AAA;
+}
+.latestPostsTitle h3:hover{
+  cursor: pointer;
+}
+
+/* Following */
+.followRow{
+  height: 75px;
+}
+
+.toRight{
+  float: right;
+  margin-top: -2px;
+}
