@@ -65,8 +65,11 @@ Logged-in user can publish posts. <br>
 * Update posts on deleting a post, on publishing, and modified sorting posts [gists](https://gist.github.com/yhagio/d71d881bf48c5dd88619)
 
 **retweet**
-* * User can repost(retweet) a post from another user [gists](https://gist.github.com/yhagio/db981b7853d6d02477a1)
+* User can repost(retweet) a post from another user [gists](https://gist.github.com/yhagio/db981b7853d6d02477a1)
 
+**refactor**
+* Refactored, CSS fixed, followership fixed, Ember.logger [gists](https://gist.github.com/yhagio/b1bf3cda0da0b707ca24)
+* User registration restriction (No duplicate username & email) [commit](https://github.com/yhagio/telegram-cli/commit/66196c0c06e4f9931301d29f3b1ef9ceea64ef0d)
 
 
 #### Additional 

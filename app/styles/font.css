@@ -1,0 +1,28 @@
+.get-going {
+  font-size: 22px;
+}
+
+.username-password,
+.recover-pass,
+span.or,
+.recoveryText,
+.login-button  {
+  font-size: 13px;
+}
+
+.login-button {
+  font-weight: bold;
+}
+
+.publish-button,
+.repostedBy {
+  font-size: 14px;
+}
+
+.followButton{
+  font-size: 15px;
+}
+
+.profileArea > p{
+  font-size: 18px;
+}

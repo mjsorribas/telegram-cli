@@ -61,10 +61,11 @@ var AuthRegisterController = Ember.ObjectController.extend({
         _this.transitionToRoute('posts');
       };
 
-      var onFail = function(){
-        Ember.Logger.error('Failed to register');
+      var onFail = function(err){
+        Ember.Logger.error('Failed to register: ', err.responseText);
+        var errorMsg = err.responseText || 'There was an error internally, please try again';
 
-        _this.set('error', 'There was an error internally, please try again');
+        _this.set('error', errorMsg);
       };
 
       newUser.save().then(onSuccess, onFail);
