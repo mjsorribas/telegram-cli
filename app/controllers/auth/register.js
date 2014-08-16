@@ -2,9 +2,11 @@ function isValidEmail(email){
   var regex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
   return regex.test(email);
 }
+
 function isValidPassword(password){
   return password.length >= 6;
 }
+
 function cryptPassword(password){
   return $.md5(password);
 }
@@ -18,7 +20,9 @@ var AuthRegisterController = Ember.ObjectController.extend({
 
   actions: {
     register: function(){
+
       this.set('error', null);
+
       var userInfo = this.getProperties('name', 'username', 'email', 'password');
 
       if(!isValidEmail(userInfo.email)){
@@ -41,22 +45,28 @@ var AuthRegisterController = Ember.ObjectController.extend({
         password: cryptPassword(userInfo.password)
       });
 
-      var self = this;
+      var _this = this;
+
       var onSuccess = function(){
-        self.set('session.user', newUser);
-        self.setProperties({
+        _this.set('session.user', newUser);
+        _this.setProperties({
           'name':     '',
           'username': '',
           'email':    '',
           'password': ''
         });
+
         Ember.Logger.debug('Successfully registered and logged in');
-        self.transitionToRoute('posts');
+
+        _this.transitionToRoute('posts');
       };
+
       var onFail = function(){
         Ember.Logger.error('Failed to register');
-        self.set('error', 'There was an error internally, please try again');
+
+        _this.set('error', 'There was an error internally, please try again');
       };
+
       newUser.save().then(onSuccess, onFail);
     }
   }

@@ -3,6 +3,7 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+
   this.resource('auth', {path: '/'}, function(){
     this.route('register', {path: '/'});
     this.route('login');
@@ -11,14 +12,16 @@ Router.map(function() {
   });
 
   this.route('posts');
+
   this.resource('users', function(){
-    this.resource('user',{path:':username'}, function(){
+    this.resource('user',{path:'/:user_id'}, function(){
       this.route('following');
       this.route('followers');
     });
   });
 
   this.route('bad', {path: '/*bad'});
+  
 });
 
 export default Router;
