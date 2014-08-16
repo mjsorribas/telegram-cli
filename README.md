@@ -65,8 +65,10 @@ Logged-in user can publish posts. <br>
 * Update posts on deleting a post, on publishing, and modified sorting posts [gists](https://gist.github.com/yhagio/d71d881bf48c5dd88619)
 
 **retweet**
-* * User can repost(retweet) a post from another user [gists](https://gist.github.com/yhagio/db981b7853d6d02477a1)
+* User can repost(retweet) a post from another user [gists](https://gist.github.com/yhagio/db981b7853d6d02477a1)
 
+**refactor**
+* Refactored, CSS fixed, followership fixed, Ember.logger [gists](https://gist.github.com/yhagio/b1bf3cda0da0b707ca24)
 
 
 #### Additional 
