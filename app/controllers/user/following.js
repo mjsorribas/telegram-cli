@@ -4,32 +4,45 @@ var UserFollowingController = Ember.ArrayController.extend({
 
   followees: function(){
 
-    var users    = [],
-        follower = this.get('follower'),
-        authUser = this.get('session.user');
+    var followeesList = [];
+    var follower      = this.get('follower');
+    var authUser      = this.get('session.user');
 
-    this.forEach(function(object) {
+    this.forEach(function(object){
+      Ember.Logger.debug('each followee: ', object);
+      // if(follower !== authUser && object !== follower && object !== authUser){
+        Ember.Logger.debug('Each followee to b pushed: ', object);
+        followeesList.push(object);
+      // }
 
-      users.push(object);
-
+      // remove self at someone's place if he not follow me
+    
       if(object.get('followedByCurrentUser')){
-        if(users.indexOf(object) < 0){
+        if(followeesList.indexOf(object) < 0){
 
-          Ember.Logger.debug('A followee I just started to follow: ', object);
-          users.push(object);
+          Ember.Logger.debug('A followee I follow: ', object);
+          followeesList.push(object);
         }
+
       } else {
-        Ember.Logger.debug('A followee: ', object);
+        Ember.Logger.debug('A followee I dont follow: ', object);
 
-        if(users.indexOf(object) >= 0 && follower === authUser){
+        if(followeesList.indexOf(object) >= 0 && follower === authUser){ // At my page
 
-          Ember.Logger.debug('A followee I just stopped to follow: ', object);
-          users.splice(users.indexOf(object), 1);
-        }
-      }
+          Ember.Logger.debug('I just stopped following (at my following page): ', object);
+          followeesList.splice(followeesList.indexOf(object), 1);
+
+        } 
+        // else if(followeesList.indexOf(object) >= 0 &&  !object.get('followingCurrentUser') && object === authUser){
+
+        //   Ember.Logger.debug('Removing myself at someones page: ', object);
+        //   followeesList.splice(followeesList.indexOf(object), 1);
+        // }
+      }    
+
     });
 
-    return users;
+    return followeesList;
 
   }.property('@each.followedByCurrentUser', '@each')
 });
