@@ -10,12 +10,9 @@ var UserFollowingController = Ember.ArrayController.extend({
 
     this.forEach(function(object){
       Ember.Logger.debug('each followee: ', object);
-      // if(follower !== authUser && object !== follower && object !== authUser){
-        Ember.Logger.debug('Each followee to b pushed: ', object);
-        followeesList.push(object);
-      // }
+      Ember.Logger.debug('Each followee to be pushed: ', object);
 
-      // remove self at someone's place if he not follow me
+      followeesList.push(object);
     
       if(object.get('followedByCurrentUser')){
         if(followeesList.indexOf(object) < 0){
@@ -27,20 +24,18 @@ var UserFollowingController = Ember.ArrayController.extend({
       } else {
         Ember.Logger.debug('A followee I dont follow: ', object);
 
-        if(followeesList.indexOf(object) >= 0 && follower === authUser){ // At my page
+        if(followeesList.indexOf(object) >= 0 && follower === authUser){
 
           Ember.Logger.debug('I just stopped following (at my following page): ', object);
           followeesList.splice(followeesList.indexOf(object), 1);
-
         } 
-        // else if(followeesList.indexOf(object) >= 0 &&  !object.get('followingCurrentUser') && object === authUser){
-
-        //   Ember.Logger.debug('Removing myself at someones page: ', object);
-        //   followeesList.splice(followeesList.indexOf(object), 1);
-        // }
       }    
-
     });
+
+    if(followeesList.indexOf(authUser) >= 0){
+      Ember.Logger.debug('Remove 1 occurence of authUser added for loading authUser');
+      followeesList.splice(followeesList.indexOf(authUser), 1);
+    }   
 
     return followeesList;
 

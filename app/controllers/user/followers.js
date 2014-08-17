@@ -25,22 +25,7 @@ var UserFollowersController = Ember.ArrayController.extend({
         followersList.splice(followersList.indexOf(authUser), 1);
       }     
     }
-
-    // if(followee.get('followedByCurrentUser')){
-    //   if(followersList.indexOf(authUser) < 0 ){
-
-    //     Ember.Logger.debug('I just started to follow');
-    //     followersList.push(authUser);
-    //   }
-
-    // } else {
-    //   if(followersList.indexOf(authUser) >= 0 && followee !== authUser){
-
-    //     Ember.Logger.debug('I just stopped to follow at someones page');
-    //     followersList.splice(followersList.indexOf(authUser), 1);
-    //   }
-    // }
-
+    
     return followersList;
 
   }.property('followee.followedByCurrentUser', '@each')
