@@ -1,9 +1,10 @@
-#Telegram - twitter like app built with Ember CLI
+#Telegram - twitter like app built with Ember CLI - Client Side Repo
 
-Tools I use:
+Note
 ```
-Tool: Ember-cli
-Operating System: Virtualbox Ubuntu 64bit
+Tech stack: Ember-cli, jQuery, momentjs, HTML5, CSS3, nginx
+Development: Virtualbox Ubuntu 64bit
+Deployment: DigitalOcean Ubuntu 14.04 64bit
 ```
 
 * Server side repo: [https://github.com/yhagio/telegram-server](https://github.com/yhagio/telegram-server)
@@ -52,13 +53,15 @@ Logged-in user can publish posts. <br>
 * If loggedin, redirect to posts when visiting account managements. [commit](https://github.com/yhagio/telegram-cli/commit/9e7809de6a6a5ee56a2902e1c3b596d322ce0a45)
 * Refactor: [commit1](https://github.com/yhagio/telegram-cli/commit/75ac8047cab95e26017909851974cdc785e5705a), [commit2](https://github.com/yhagio/telegram-cli/commit/ac9e0be21b46424ab3a492ef58922a6810a49b10), [commit3](https://github.com/yhagio/telegram-cli/commit/641ca3dcbca9ac04cefb2a5442af5ebc250dcb3c)
 
-**FollowUser branch**
+### Some branch notes
+
+**FollowUser**
 * Follow user, followings, followers - [gist](https://gist.github.com/yhagio/214f0a60d4059cd51a08)
 * User can see the followers & followees
 * User can see the following user's posts + own posts in '/posts'
 * Posts displaying issues fixed: [commits here](https://gist.github.com/yhagio/9224cccb652a9a106096)
 
-**securePass branch**
+**securePass**
 * fixed some issues for displaying posts above [commits here](https://gist.github.com/yhagio/9224cccb652a9a106096)
 * User can reset password / sent by email (Mailgun) [Commits](https://gist.github.com/yhagio/9c6ac9f185bea1dca5b8)
 * Securing password: [commits](https://gist.github.com/yhagio/4eb3ee7309231cdd4017)
@@ -72,7 +75,12 @@ Logged-in user can publish posts. <br>
 * User registration restriction (No duplicate username & email) [commit](https://github.com/yhagio/telegram-cli/commit/66196c0c06e4f9931301d29f3b1ef9ceea64ef0d)
 
 
-#### Additional 
+#### Additional Features to implement
 * User can set his/her profile avatar (Upload and save it)
+* User account page (username, email, full name, password, account deletion)
 * Notification of new post from following users
 * Private message
+* Hash tags
+* Search (users & posts)
+* Load posts button (skip / limit)
+* Link / Share posts
