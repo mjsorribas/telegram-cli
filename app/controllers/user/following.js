@@ -4,32 +4,40 @@ var UserFollowingController = Ember.ArrayController.extend({
 
   followees: function(){
 
-    var users    = [],
-        follower = this.get('follower'),
-        authUser = this.get('session.user');
+    var followeesList = [];
+    var follower      = this.get('follower');
+    var authUser      = this.get('session.user');
 
-    this.forEach(function(object) {
+    this.forEach(function(object){
+      Ember.Logger.debug('each followee: ', object);
+      Ember.Logger.debug('Each followee to be pushed: ', object);
 
-      users.push(object);
-
+      followeesList.push(object);
+    
       if(object.get('followedByCurrentUser')){
-        if(users.indexOf(object) < 0){
+        if(followeesList.indexOf(object) < 0){
 
-          Ember.Logger.debug('A followee I just started to follow: ', object);
-          users.push(object);
+          Ember.Logger.debug('A followee I follow: ', object);
+          followeesList.push(object);
         }
+
       } else {
-        Ember.Logger.debug('A followee: ', object);
+        Ember.Logger.debug('A followee I dont follow: ', object);
 
-        if(users.indexOf(object) >= 0 && follower === authUser){
+        if(followeesList.indexOf(object) >= 0 && follower === authUser){
 
-          Ember.Logger.debug('A followee I just stopped to follow: ', object);
-          users.splice(users.indexOf(object), 1);
-        }
-      }
+          Ember.Logger.debug('I just stopped following (at my following page): ', object);
+          followeesList.splice(followeesList.indexOf(object), 1);
+        } 
+      }    
     });
 
-    return users;
+    if(followeesList.indexOf(authUser) >= 0){
+      Ember.Logger.debug('Remove 1 occurence of authUser added for loading authUser');
+      followeesList.splice(followeesList.indexOf(authUser), 1);
+    }   
+
+    return followeesList;
 
   }.property('@each.followedByCurrentUser', '@each')
 });
