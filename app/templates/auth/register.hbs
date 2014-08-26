@@ -1,9 +1,22 @@
 <p class="get-going">Create your account</p>
 <form {{action register on="submit"}}>
-  {{input value=email class="username-password" type="text" placeholder="Enter your email ..."}}
-  {{input value=name class="username-password" type="text" placeholder="Enter your name ..."}}
-  {{input value=username class="username-password" type="text" placeholder="Enter your username ..."}}
-  {{input value=password class="username-password" type="password" placeholder="Enter your password: Min 6 characters..."}}
+  <div>
+    <label class="input-title">Email: </label>
+    {{input value=email class="username-password" type="text" placeholder="Enter your email ..." autofocus="autofocus"}}
+  </div>
+  <div>
+    <label class="input-title">Name: </label>
+    {{input value=name class="username-password" type="text" placeholder="Enter your name ..."}}
+  </div>
+  <div>
+    <label class="input-title">Username: </label>
+    {{input value=username class="username-password" type="text" placeholder="Enter your username ..."}}
+  </div>
+  <div>
+    <label class="input-title">Password: </label>
+    {{input value=password class="username-password" type="password" placeholder="Enter your password: Min 6 characters..."}}
+  </div>
+  
   <button class="login-button" type="submit">Register</button>
   <div class="recover-pass-wrap">
     {{#link-to 'auth.login' class="recover-pass"}}Login{{/link-to}}

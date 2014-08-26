@@ -7,7 +7,7 @@
 /* Left part of main white box 
 ================================ */
 .left-box {
-  width: 50%;
+  width: 40%;
   height: 100%;
   float:left;
 }
@@ -32,7 +32,7 @@ img.telegram {
 /* Right part of main white box 
 ================================ */
 .right-box {
-  width: 50%;
+  width: 60%;
   height: 100%;
   float:right;
 }
@@ -53,13 +53,19 @@ img.postmark {
   margin-top: 30px;
 }
 /* Error message */
-.alert-msg{ 
+.alert-msg, .success-msg { 
   display: block;
-  margin-top: 80px;
+  margin-top: 60px;
   height:20px;
   color: #da0000;
   font-size: 14px;
 }
+
+/* Success Account Update */
+.success-msg {
+  color: #008000;
+}
+
 .login-form {
   margin: auto;
   width: 75%;
@@ -69,12 +75,20 @@ img.postmark {
   margin-bottom: 10px;
 }
 
+form > div > label.input-title,
+form > div > input.ember-view.ember-text-field.username-password {
+  display: inline-block;
+}
+
+form > div > label.input-title {
+  width: 25%;
+}
+
 .username-password {
+  width: 70%;
   margin-bottom: 10px;
-  display: block;
   border: none;
   height: 20px;
-  width: 100%;
   border-bottom: 1px solid #EEEEEE;
   outline: 0;
 }
@@ -92,3 +106,4 @@ img.postmark {
   margin-top:20px;
   float: right;
 }
+
