@@ -10,7 +10,6 @@ Router.map(function() {
     this.route('resetpassword');
     this.route('sentpassnotify');
     this.route('account');
-    this.route('avatar');
   });
 
   this.route('posts');

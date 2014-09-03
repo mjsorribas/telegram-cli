@@ -27,7 +27,6 @@ var AuthAccountController = Ember.ArrayController.extend({
   username: null,
   email:    null,
   password: null,
-  // avatar:   null,
   error:    null,
   successMsg: null,
 
@@ -60,9 +59,6 @@ var AuthAccountController = Ember.ArrayController.extend({
       updateUser.set('name', userInfo.name);
       updateUser.set('username', userInfo.username);
       updateUser.set('password', cryptPassword(userPassword));
-      // updateUser.set('avatar', userInfo.avatar);
-
-      // Ember.Logger.debug("avatar: ", userInfo.avatar); 
 
       var _this = this;
 
@@ -73,7 +69,6 @@ var AuthAccountController = Ember.ArrayController.extend({
           'username': '',
           'email':    '',
           'password': ''
-          // 'avatar':   ''
         });
 
         Ember.Logger.debug('Successfully updated your acount information');
@@ -107,7 +102,7 @@ var AuthAccountController = Ember.ArrayController.extend({
       var onFail = function(err){
         if(err.responseText === 'OK'){
           Ember.Logger.error('Successfully delete a user!');
-          
+
           _this.set('session.user', null);
           _this.transitionToRoute('/');
 
