@@ -1,32 +1,38 @@
 <p class="get-going">Account Setting</p>
 
-<form {{action saveuser on="submit"}}>
+<form {{action saveuser on="submit"}} enctype='multipart/form-data'>
 
   <div>
     <label class="input-title">Email: </label>
-    {{input value=email class="username-password" type="text" value=accountuser.email placeholder="Enter your email ..." autofocus="autofocus"}}
+    {{input class="username-password" type="text" value=accountuser.email placeholder="Enter your email ..." autofocus="autofocus"}}
   </div>
+
   <div>
     <label class="input-title">Name: </label>
-    {{input value=name class="username-password" type="text" value=accountuser.name placeholder="Enter your name ..."}}
+    {{input class="username-password" type="text" value=accountuser.name placeholder="Enter your name ..."}}
   </div>
+
   <div>
     <label class="input-title">Username: </label>
-    {{input value=username class="username-password" type="text" value=accountuser.username placeholder="Enter your username ..."}}
+    {{input class="username-password" type="text" value=accountuser.username placeholder="Enter your username ..."}}
   </div>
+
   <div>
     <label class="input-title">Password: </label>
     {{input value=password class="username-password" type="password" placeholder="Enter your password: Min 6 characters..."}}
   </div>
-  <div>
-     <label class="input-title">Avatar: </label>
-     {{input value=avatar class="username-password" type="file" multiple="multiple"}}
-  </div>
+
+{{!--   <div>
+    <label class="input-title">Avatar: </label>
+    {{input value=avatar class="username-password" type="file" multiple="multiple"}}
+  </div> --}}
 
   <button class="login-button" type="submit">Save</button>
+
   <div class="recover-pass-wrap">
     {{#link-to 'posts' class="recover-pass"}}Posts page{{/link-to}}
   </div>
+
 </form>
 
 {{#if error}}

@@ -26,8 +26,8 @@ var AuthAccountController = Ember.ArrayController.extend({
   name:     null,
   username: null,
   email:    null,
-  avatar:   null,
   password: null,
+  // avatar:   null,
   error:    null,
   successMsg: null,
 
@@ -59,8 +59,10 @@ var AuthAccountController = Ember.ArrayController.extend({
       updateUser.set('email', userInfo.email);
       updateUser.set('name', userInfo.name);
       updateUser.set('username', userInfo.username);
-      updateUser.set('avatar', userInfo.avatar);
       updateUser.set('password', cryptPassword(userPassword));
+      // updateUser.set('avatar', userInfo.avatar);
+
+      // Ember.Logger.debug("avatar: ", userInfo.avatar); 
 
       var _this = this;
 
@@ -70,8 +72,8 @@ var AuthAccountController = Ember.ArrayController.extend({
           'name':     '',
           'username': '',
           'email':    '',
-          'avatar'  : '',
           'password': ''
+          // 'avatar':   ''
         });
 
         Ember.Logger.debug('Successfully updated your acount information');
@@ -80,7 +82,7 @@ var AuthAccountController = Ember.ArrayController.extend({
       };
 
       var onFail = function(err){
-        Ember.Logger.error('Failed to register: ', err.responseText);
+        Ember.Logger.error('Failed to update: ', err.responseText);
         var errorMsg = err.responseText || 'There was an error internally, please try again';
 
         _this.set('error', errorMsg);

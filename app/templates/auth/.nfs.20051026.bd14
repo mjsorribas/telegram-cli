@@ -1,0 +1,31 @@
+<p class="get-going">Avatar</p>
+
+<form {{action uploadAvatar on="submit"}} enctype='multipart/form-data'>
+
+  <div>
+    <label class="input-title">Avatar: </label>
+    {{input value=avatar class="username-password" type="file" multiple="multiple"}}
+  </div>
+
+  <button class="login-button" type="submit">Upload</button>
+  <div class="recover-pass-wrap">
+    {{#link-to 'posts' class="recover-pass"}}Posts page{{/link-to}}
+  </div>
+</form>
+
+{{!-- <form method="POST" action="/api/users/bob" enctype='multipart/form-data'>
+
+  <div>
+    <label class="input-title">Avatar: </label>
+    <input name="avatar" class="username-password" type="file" multiple="multiple">
+  </div>
+
+  <button class="login-button" type="submit">Upload</button>
+</form> --}}
+
+{{#if error}}
+  <span class="alert-msg">Error: {{error}}</span>
+{{/if}}
+{{#if successMsg}}
+  <span class="success-msg">{{successMsg}}</span>
+{{/if}}

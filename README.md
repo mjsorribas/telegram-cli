@@ -75,7 +75,7 @@ Logged-in user can publish posts. <br>
 * User registration restriction (No duplicate username & email) [commit](https://github.com/yhagio/telegram-cli/commit/66196c0c06e4f9931301d29f3b1ef9ceea64ef0d)
 
 **userAccount**
-* User can change their information (except avatar yet) [commit]()
+* User can change their information (except avatar yet) [commit](https://github.com/yhagio/telegram-cli/commit/a4f8f087cede60b8583316a67ca6d8ca16433f3f)
 
 #### Additional Features to implement
 * User can set his/her profile avatar (Upload and save it)
