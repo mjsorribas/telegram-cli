@@ -89,6 +89,37 @@ var AuthAccountController = Ember.ArrayController.extend({
       };
 
       updateUser.save().then(onSuccess, onFail);
+    },
+
+    deleteAccount: function(user){
+      Ember.Logger.debug('Deleting Account User', user);
+      user.deleteRecord();
+
+      var _this = this;
+
+      var onSuccess = function(){
+        Ember.Logger.debug('Successfully deleted a user');
+
+        _this.set('session.user', null);
+        _this.transitionToRoute('/');
+      };
+
+      var onFail = function(err){
+        if(err.responseText === 'OK'){
+          Ember.Logger.error('Successfully delete a user!');
+          
+          _this.set('session.user', null);
+          _this.transitionToRoute('/');
+
+        } else {
+          Ember.Logger.error('Failed to delete: ', err.responseText);
+          var errorMsg = err.responseText || 'There was an error internally, please try again';
+
+          _this.set('error', errorMsg);
+        }
+      };
+
+      user.save().then(onSuccess, onFail);
     }
   }
 

@@ -28,6 +28,7 @@
   </div> --}}
 
   <button class="login-button" type="submit">Save</button>
+  <button {{action "deleteAccount" accountuser}} class="delete-acct-btn">Delete Account</button>
 
   <div class="recover-pass-wrap">
     {{#link-to 'posts' class="recover-pass"}}Posts page{{/link-to}}

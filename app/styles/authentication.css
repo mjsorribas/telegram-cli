@@ -94,13 +94,22 @@ form > div > label.input-title {
 }
 
 
-.login-button {
+.login-button,
+.delete-acct-btn {
   margin-top:15px;
   padding: 5px 7px;
   border: 1px solid #0084B2;
   float: left;
   border-radius: 15px;
 }
+
+.delete-acct-btn {
+  color: red;
+  margin-left: 50px;
+  border-color: red;
+  background-color: #FFF;
+}
+
 
 .recover-pass-wrap {
   margin-top:20px;
