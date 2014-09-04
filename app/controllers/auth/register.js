@@ -42,7 +42,8 @@ var AuthRegisterController = Ember.ObjectController.extend({
         username: userInfo.username,
         name:     userInfo.name,
         email:    userInfo.email,
-        password: cryptPassword(userInfo.password)
+        password: cryptPassword(userInfo.password),
+        avatar:   'https://www.gravatar.com/avatar/' + md5(userInfo.email) + '.jpg?&size=70'
       });
 
       var _this = this;

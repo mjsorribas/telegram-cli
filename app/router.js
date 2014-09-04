@@ -9,6 +9,7 @@ Router.map(function() {
     this.route('login');
     this.route('resetpassword');
     this.route('sentpassnotify');
+    this.route('account');
   });
 
   this.route('posts');

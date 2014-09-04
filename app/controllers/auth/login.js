@@ -38,9 +38,11 @@ var AuthLoginController = Ember.ObjectController.extend({
         _this.transitionToRoute('posts');  
       };
 
-      var onFail = function(){
-        Ember.Logger.error('Failed login');
-        _this.set('error', "The user doesn't exist");
+      var onFail = function(err){
+        Ember.Logger.error('Failed to login: ', err.responseText);
+        var errorMsg = err.responseText || 'There was an error internally, please try again';
+
+        _this.set('error', errorMsg);
       };
 
       this.store.find('user', {

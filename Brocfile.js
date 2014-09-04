@@ -12,6 +12,7 @@ var app = new EmberApp({
 app.import('vendor/ember-data/ember-data.js');
 app.import('vendor/momentjs/moment.js');
 app.import('vendor/jquery-md5/jquery.md5.js');
+app.import('vendor/js-md5/js/md5.js');
 
 // If the library that you are including contains AMD or ES6 modules that
 // you would like to import into your application please specify an
@@ -26,6 +27,5 @@ app.import('vendor/ic-ajax/dist/named-amd/main.js', {
     'request',
   ]
 });
-
 
 module.exports = app.toTree();

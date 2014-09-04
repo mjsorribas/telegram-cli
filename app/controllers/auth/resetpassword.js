@@ -34,13 +34,15 @@ var AuthResetpasswordController = Ember.ObjectController.extend({
         }
       };
 
-      var onFail = function(){
-        Ember.Logger.error('Failed to send a new password');
-        _this.set('error', "Something went wrong ... Try again");
+      var onFail = function(err){
+        Ember.Logger.error('Failed to send new password: ', err.responseText);
+        var errorMsg = err.responseText || 'There was an error internally, please try again';
+
+        _this.set('error', errorMsg);
       };
 
       this.store.find('user', {
-        username: userInfo.username, 
+        username:  userInfo.username, 
         email:     userInfo.email,
         operation: 'resetPassword'
       }).then(onSuccess, onFail);
