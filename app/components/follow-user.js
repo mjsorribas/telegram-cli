@@ -1,7 +1,7 @@
 export default Ember.Component.extend({
 
   isYou: function(){
-    return this.get('user') === this.get('session.user');
+    return this.get('user.id') === this.get('session.user.id');
   }.property('user', 'session.user'),
 
   actions: {

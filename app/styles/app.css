@@ -46,3 +46,22 @@ a:hover,
 button:hover {
   cursor: pointer;
 }
+
+li.search-li {
+  margin-left: 20px;
+  vertical-align: top;
+}
+
+input.search-input {
+  border-radius: 20px;
+  height: 25px;
+  width: 200px;
+  border: none;
+  background: #ddd;
+  padding-left: 10px;
+}
+
+input.search-input:focus,
+input.search-input:active {
+  outline: 0;
+};

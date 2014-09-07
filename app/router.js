@@ -13,6 +13,7 @@ Router.map(function() {
   });
 
   this.route('posts');
+  this.route('search');
 
   this.resource('users', function(){
     this.resource('user',{path:'/:user_id'}, function(){

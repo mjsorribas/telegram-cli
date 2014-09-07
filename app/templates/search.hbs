@@ -1,0 +1,76 @@
+{{nav-bar session=session logout="logout"}}
+<div class="postsContainer">
+  <div class="innerPostsContent">
+
+    <div class="profileArea">
+      {{input type="text" class="search-input" placeholder="Search Users by Username ..." value=userQuery action="searchUser"}}
+      {{input type="text" class="search-input" placeholder="Search Posts by keywords ..." value=postQuery action="searchPost"}}
+    </div>
+    <div class="latestPostsTitle">
+      <h3>
+      {{#if error}}
+        Error: {{error}}
+      {{else}}
+        {{#if users}}
+          Users matched: {{users.length}}
+        {{else}}
+          {{#if posts}}      
+            Posts matched: {{posts.length}}
+          {{else}}
+            Nothing found
+          {{/if}}   
+        {{/if}}
+      {{/if}}
+      </h3>
+    </div>
+  
+    {{#if users}}
+      {{#each user in users}}
+        {{follow-user user=user session=controller.session action="followUnfollow" param=user}}
+      {{/each}}
+    {{/if}}
+
+    {{#if posts}}
+      {{#each post in posts}}
+        {{!-- {{post-box　user=controller.session.user post=post session=controller.session action="yesRepost" param=post}} --}}
+
+        <div class="eachPost">
+          {{#if post.originalAuthor}}
+            <div class="repostHead">
+              <img src="images/icon-repost.png" alt="Repost Icon">
+              <span>
+                <span class="repostedBy">Reposted by</span> 
+                {{#link-to 'user' post.user}}
+                  {{post.user.username}}
+                {{/link-to}}
+              </span>
+            </div>
+          {{/if}}
+          <div class="postProfilePhoto">
+            {{#link-to 'user' post.user}}
+              <img {{bind-attr src=post.user.avatar}} alt="Profile Photo">
+            {{/link-to}}
+          </div>
+          <div class="eachPostContent">
+            <p class="postAuthor">
+              <strong>
+                {{#if post.originalAuthor}}
+                  {{#link-to 'user' post.originalAuthor}}
+                    {{post.originalAuthor.username}}
+                  {{/link-to}}
+                {{else}}
+                  {{#link-to 'user' post.user}}
+                    {{post.user.username}}
+                  {{/link-to}}
+                {{/if}}
+              </strong>
+            </p>
+            <p class="postContent">{{post.body}}</p>
+            <span class="timePosted"><em>{{format-date post.date}}</em></span>
+          </div>
+        </div>
+      {{/each}}
+    {{/if}}
+
+  </div>
+</div>

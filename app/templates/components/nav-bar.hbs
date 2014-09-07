@@ -12,6 +12,10 @@
           <img src="images/telegram-logo-small.png" alt="telegram logo">
         {{/link-to}}
       </li>
+      <li class="search-li">
+        {{#link-to 'search' classNames="logout"}}Search Page{{/link-to}}
+        {{!-- {{input type="text" class="search-input" placeholder="Search User by Username ..." value=searchTerm action="searchUser"}} --}}
+      </li>
       {{#if session.isAuthenticated}}
         <li class="userInfoNav">
           {{#link-to 'user' session.user.username}}
